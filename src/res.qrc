@@ -1,0 +1,22 @@
+<RCC>
+    <qresource prefix="/">
+        <file>qml/main.qml</file>
+        <file>qml/MainView.qml</file>
+        <file>qml/CommentsModel.qml</file>
+        <file>qml/NewsModel.qml</file>
+        <file>qml/NewsDelegate.qml</file>
+        <file>qml/CommentsDelegate.qml</file>
+        <file>qml/CommentsView.qml</file>
+        <file>qml/CommentsHeader.qml</file>
+        <file>qml/Header.qml</file>
+        <file>qml/Divider.qml</file>
+        <file>qml/AboutView.qml</file>
+        <file>qml/RefreshHeader.qml</file>
+        <file>qml/MNM.js</file>
+        <file>resources/icon-meneamigo.png</file>
+        <file>resources/icon-view-comments.png</file>
+        <file>resources/icon-view-details.png</file>
+        <file>resources/icon-refresh.png</file>
+        <file>resources/meneamigo.svg</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,18 @@
+Meneamigo is written by:
+
+Simon Pena <spena@igalia.com>
+
+Meneamigo accesses Meneame at http://www.meneame.net
+
+The elephant icon has been modified from the original by Jazzmanian. The
+original icon is in the Public Domain and has been fetched from
+ * http://de.wikipedia.org/wiki/Datei:Certain_Elephant.svg
+
+Meneamigo uses LGPL icons modified from MeeGoTouch Theme Graphics
+(https://meego.gitorious.org/meegotouch/meegotouch-theme-graphics):
+ * icon-refresh.png comes from icon-m-content-third-party-update.svg
+ * icon-view-comments.png comes from icon-m-common-empty-image.svg
+ * icon-view-details.png comes from icon-m-content-chat.svg
+
+The application icon has been generated using the "Harmattan Icon Generator" by
+Javier De San Pedro Martin available at http://depot.javispedro.com/nit/hicg/
