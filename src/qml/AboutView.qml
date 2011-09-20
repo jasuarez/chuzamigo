@@ -3,7 +3,7 @@ import com.nokia.meego 1.0
 import "file:///usr/lib/qt4/imports/com/meego/UIConstants.js" as UIConstants
 
 Page {
-    property string license: '<i>This program is free software: you can redistribute it and/or modify ' +
+    property string license: 'This program is free software: you can redistribute it and/or modify ' +
         'it under the terms of the GNU General Public License as published by ' +
         'the Free Software Foundation, either version 3 of the License, or ' +
         '(at your option) any later version.<br /><br />' +
@@ -15,7 +15,7 @@ Page {
 
         'You should have received a copy of the GNU General Public License ' +
         'along with this program. If not, see ' +
-        '<a href="http://www.gnu.org/licenses">http://www.gnu.org/licenses</a></i><br /><br />'
+        '<a href="http://www.gnu.org/licenses">http://www.gnu.org/licenses</a><br /><br />'
 
     tools: ToolBarLayout {
         ToolIcon {
@@ -63,6 +63,7 @@ Page {
             anchors.top: aboutImage.bottom
             anchors.topMargin: UIConstants.DEFAULT_MARGIN
             anchors.horizontalCenter: parent.horizontalCenter
+            font.family: UIConstants.FONT_FAMILY
             font.pixelSize: UIConstants.FONT_XLARGE
             color: !theme.inverted ?
                        UIConstants.COLOR_FOREGROUND :
@@ -75,6 +76,7 @@ Page {
             anchors.top: aboutVersion.bottom
             anchors.topMargin: UIConstants.DEFAULT_MARGIN
             anchors.horizontalCenter: parent.horizontalCenter
+            font.family: UIConstants.FONT_FAMILY
             font.pixelSize: UIConstants.FONT_XLARGE
             color: !theme.inverted ?
                        UIConstants.COLOR_FOREGROUND :
@@ -86,6 +88,7 @@ Page {
             anchors.top: aboutCopyright.bottom
             anchors.topMargin: UIConstants.DEFAULT_MARGIN
             anchors.horizontalCenter: parent.horizontalCenter
+            font.family: UIConstants.FONT_FAMILY
             font.pixelSize: UIConstants.FONT_LSMALL
             color: !theme.inverted ?
                        UIConstants.COLOR_FOREGROUND :
@@ -99,6 +102,7 @@ Page {
             id: aboutMeneameDisclaimer
             anchors.top: aboutContact.bottom
             anchors.topMargin: UIConstants.DEFAULT_MARGIN
+            font.family: UIConstants.FONT_FAMILY
             font.pixelSize: UIConstants.FONT_LSMALL
             color: !theme.inverted ?
                        UIConstants.COLOR_FOREGROUND :
@@ -119,6 +123,7 @@ Page {
                        UIConstants.COLOR_INVERTED_FOREGROUND
             width: parent.width
             wrapMode: Text.WordWrap
+            font.family: "Nokia Pure Text Light"
             text: license
             onLinkActivated: Qt.openUrlExternally(link)
         }
