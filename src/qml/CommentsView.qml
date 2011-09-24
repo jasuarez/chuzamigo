@@ -160,7 +160,7 @@ Page {
         Divider {
             id: divider
             anchors.top: extendedContent.bottom
-            text: 'Comentarios'
+            text: commentsList.model.count + ' comentarios'
         }
 
         ListView {
