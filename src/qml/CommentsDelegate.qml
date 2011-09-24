@@ -27,7 +27,7 @@ Item {
         x: UIConstants.PADDING_LARGE
         y: UIConstants.PADDING_LARGE
         id: contentColumn
-        width: parent.width - UIConstants.PADDING_MEDIUM * 2
+        width: parent.width - UIConstants.PADDING_LARGE * 2
 
         Text {
             y: UIConstants.PADDING_MEDIUM
@@ -48,11 +48,27 @@ Item {
             }
         }
 
-        Text {
-            font.pixelSize: UIConstants.FONT_XSMALL
-            font.family: UIConstants.FONT_FAMILY
-            text: '#' + model.mnm_order +  ' | ' + model.mnm_karma + ' karma | Por ' + model.mnm_user
-            color: 'orange'
+        Item {
+            width: parent.width
+            height: childrenRect.height
+
+            Text {
+                anchors.left: parent.left
+                font.pixelSize: UIConstants.FONT_XSMALL
+                font.family: UIConstants.FONT_FAMILY
+                text: '#' + model.mnm_order + ' | ' +
+                      model.mnm_karma + ' karma | Por ' +
+                      model.mnm_user
+                color: 'orange'
+            }
+
+            Text {
+                anchors.right: parent.right
+                font.pixelSize: UIConstants.FONT_XSMALL
+                font.family: UIConstants.FONT_FAMILY
+                text: Qt.formatDateTime(MNM.getDate(model.pubDate))
+                color: 'orange'
+            }
         }
     }
 }
