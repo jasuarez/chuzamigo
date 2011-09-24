@@ -1,3 +1,13 @@
+meneamigo (0.2) unstable; urgency=low
+
+  * Allow following links inside comments
+  * UI improvements in comments view
+  * Added anonymous voting support
+  * Basic handling of network errors
+  * Reduced splash screen's size
+
+ -- Simon Pena <spena@igalia.com>  Sun, 25 Sep 2011 00:01:03 +0300
+
 meneamigo (0.1-1) unstable; urgency=low
 
   * Initial release
