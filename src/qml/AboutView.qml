@@ -56,7 +56,7 @@ Page {
 
             Text {
                 id: aboutVersion
-                text: 'Meneamigo 0.1'
+                text: 'Meneamigo 0.2'
                 anchors.horizontalCenter: parent.horizontalCenter
                 font.family: UIConstants.FONT_FAMILY
                 font.pixelSize: UIConstants.FONT_XLARGE
