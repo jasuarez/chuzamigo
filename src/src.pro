@@ -41,6 +41,7 @@ OTHER_FILES += \
     qml/Divider.qml \
     qml/RefreshHeader.qml \
     qml/AboutView.qml \
+    qml/workerscript.js \
     resources/icon-view-details.png \
     resources/icon-view-comments.png \
     resources/icon-meneamigo.png \

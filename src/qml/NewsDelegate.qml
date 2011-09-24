@@ -15,6 +15,8 @@ Item {
     height: content.height + 2 * UIConstants.PADDING_MEDIUM
 
     property bool showDetails: false
+    property int votedStatus: MNM.VOTE_AVAILABLE
+    signal vote(string linkId)
 
     Component {
         id: commentsView
@@ -33,43 +35,99 @@ Item {
             spacing: UIConstants.PADDING_LARGE
 
             Item {
-                id: votesArea
-
-                height: votesColumn.height + UIConstants.PADDING_SMALL * 2
-                width: votesColumn.width + UIConstants.PADDING_SMALL * 2
-
-                Rectangle {
-                    anchors.fill: parent
-                    color: 'darkorange'
-                    radius: 10
-                }
+                height: votesColumn.height
+                width: votesColumn.width
 
                 Column {
                     id: votesColumn
-                    anchors.centerIn: parent
+                    width: votesUpperArea.width
+                    height: votesUpperArea.height + votesLowerArea.height
+                    spacing: UIConstants.PADDING_SMALL
 
-                    Text {
-                        font.pixelSize: model.mnm_votes < 1000 ?
-                                            UIConstants.FONT_DEFAULT :
-                                            UIConstants.FONT_LSMALL
-                        font.family: UIConstants.FONT_FAMILY
-                        text: model.mnm_votes
-                        anchors.horizontalCenter: parent.horizontalCenter
-                        color: 'white'
+                    Item {
+                        id: votesUpperArea
+
+                        height: votesUpperColumn.height + UIConstants.PADDING_SMALL * 2
+                        width: votesUpperColumn.width + UIConstants.PADDING_SMALL * 2
+
+                        Rectangle {
+                            anchors.fill: parent
+                            color: 'darkorange'
+                            radius: 10
+                        }
+
+                        Column {
+                            id: votesUpperColumn
+                            anchors.centerIn: parent
+
+                            Text {
+                                font.pixelSize: model.mnm_votes < 1000 ?
+                                                    UIConstants.FONT_DEFAULT :
+                                                    UIConstants.FONT_LSMALL
+                                font.family: UIConstants.FONT_FAMILY
+                                text: model.mnm_votes +
+                                      (votedStatus == MNM.VOTE_DONE ? 1 : 0)
+                                anchors.horizontalCenter: parent.horizontalCenter
+                                color: 'white'
+                            }
+
+                            Text {
+                                font.pixelSize: UIConstants.FONT_XXSMALL
+                                font.family: "Nokia Pure Text Light"
+                                text: 'meneos'
+                                color: 'white'
+                            }
+                        }
                     }
 
-                    Text {
-                        font.pixelSize: UIConstants.FONT_XXSMALL
-                        font.family: "Nokia Pure Text Light"
-                        text: 'meneos'
-                        color: 'white'
+                    Item {
+                        id: votesLowerArea
+
+                        height: shakeItText.height + UIConstants.PADDING_SMALL * 2
+                        width: parent.width
+
+                        Rectangle {
+                            anchors.fill: parent
+                            color: 'transparent'
+                            radius: 5
+                            border.width: 1
+                            border.color: 'darkorange'
+                        }
+
+                        Text {
+                            id: shakeItText
+                            y: UIConstants.PADDING_SMALL
+                            font.pixelSize: UIConstants.FONT_XXSMALL
+                            font.family: UIConstants.FONT_FAMILY
+                            text: if (votedStatus == MNM.VOTE_DONE) {
+                                      'chachi'
+                                  } else if (votedStatus == MNM.VOTE_AVAILABLE) {
+                                      'vota'
+                                  } else if (votedStatus == MNM.VOTE_WAITING) {
+                                      '...'
+                                  } else {
+                                      'error'
+                                  }
+
+                            anchors.horizontalCenter: parent.horizontalCenter
+                            color: 'darkorange'
+                        }
+                    }
+                }
+
+                MouseArea {
+                    anchors.fill: parent
+                    onClicked: {
+                        if (votedStatus == MNM.VOTE_AVAILABLE) {
+                            newsDelegate.vote(model.mnm_link_id)
+                        }
                     }
                 }
             }
 
             Column {
                 id: entryColumn
-                width: parent.width - votesArea.width
+                width: parent.width - votesUpperArea.width
                 spacing: UIConstants.PADDING_SMALL
 
                 Item {

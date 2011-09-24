@@ -13,6 +13,7 @@
         <file>qml/AboutView.qml</file>
         <file>qml/RefreshHeader.qml</file>
         <file>qml/MNM.js</file>
+        <file>qml/workerscript.js</file>
         <file>resources/icon-meneamigo.png</file>
         <file>resources/icon-view-comments.png</file>
         <file>resources/icon-view-details.png</file>

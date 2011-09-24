@@ -9,10 +9,52 @@ Page {
                                Math.max(list.height, list.contentHeight)
     property bool firstLoad: true
     property bool showListHeader: false
+    property string baseKey: ''
+    property variant votesMap: {}
 
     function onLoadingFinished() {
         firstLoad = false
         showListHeader = false
+    }
+
+    Component.onCompleted: {
+        asyncWorker.sendMessage({ method: MNM.METHOD_AUTH, url: MNM.BASE_URL })
+    }
+
+    WorkerScript {
+        id: asyncWorker
+        source: 'workerscript.js'
+
+        onMessage: {
+            parseResponse(messageObject)
+        }
+    }
+
+    function parseResponse(messageObject) {
+        var method = messageObject.method
+        var response = messageObject.response
+
+        if (method == MNM.METHOD_AUTH) {
+            var pattern = 'base_key='
+            var keyFirstIndex = response.indexOf('base_key="')
+            var keyLastIndex = response.substr(keyFirstIndex + pattern.length + 1).indexOf('"')
+
+            baseKey = response.substr(keyFirstIndex + pattern.length + 1, keyLastIndex)
+        } else if (method == MNM.METHOD_VOTE) {
+            var responseJSON = response.match(/{.*}/)
+            var parsedResponse = JSON.parse(responseJSON)
+
+            // TODO: This is inefficient according to
+            // http://doc.qt.nokia.com/4.7-snapshot/qml-variant.html
+            var tempMap = votesMap
+
+            if (parsedResponse.error) {
+                tempMap[messageObject.id] = MNM.VOTE_ERROR
+            } else if (parsedResponse.vote_description){
+                tempMap[messageObject.id] = MNM.VOTE_DONE
+            }
+            votesMap = tempMap
+        }
     }
 
     Component {
@@ -91,7 +133,21 @@ Page {
         }
         clip: true
         model: categorySelectionDialog.selectedIndex === 0 ? publishedNews : pendingNews
-        delegate: NewsDelegate { }
+        delegate: NewsDelegate {
+            votedStatus: votesMap[model.mnm_link_id] ?
+                             votesMap[model.mnm_link_id] :
+                             MNM.VOTE_AVAILABLE
+            onVote: {
+                if (!votesMap[linkId]) {
+                    var tempMap = votesMap
+                    var voteUrl = MNM.getAnonymousVotingURL(baseKey, linkId)
+
+                    tempMap[linkId] = MNM.VOTE_WAITING
+                    votesMap = tempMap
+                    asyncWorker.sendMessage({ method: MNM.METHOD_VOTE, url: voteUrl, id: linkId })
+                }
+            }
+        }
         opacity: list.model.status == XmlListModel.Ready ? 1 : 0.5
         header: RefreshHeader {
             id: refreshHeader
