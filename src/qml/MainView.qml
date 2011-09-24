@@ -191,6 +191,31 @@ Page {
         platformStyle: BusyIndicatorStyle { size: 'large' }
     }
 
+    Column {
+        id: listModelError
+        anchors.centerIn: parent
+        anchors.margins: UIConstants.DEFAULT_MARGIN
+        visible: list.model.status == XmlListModel.Error
+        spacing: UIConstants.PADDING_SMALL
+
+        Text {
+            id: listModelErrorText
+            font.pixelSize: UIConstants.FONT_XLARGE
+            font.family: UIConstants.FONT_FAMILY
+            color: UIConstants.COLOR_BUTTON_DISABLED_FOREGROUND
+            text: 'Error al acceder a Menéame'
+        }
+
+        Button {
+            text: 'Volver a intentar'
+            anchors.horizontalCenter: listModelErrorText.horizontalCenter
+            onClicked: {
+                firstLoad = true
+                list.model.reload()
+            }
+        }
+    }
+
     ScrollDecorator {
         flickableItem: list
     }
