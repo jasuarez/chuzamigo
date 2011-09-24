@@ -35,7 +35,17 @@ Item {
             font.family: UIConstants.FONT_FAMILY
             width: parent.width
             wrapMode: Text.WordWrap
-            text: MNM.sanitizeText(model.description)
+            text: MNM.cleanUpComments(model.description)
+            onLinkActivated: {
+                // Links to comments start with '/'
+                if (MNM.startsWith(link, '/')) {
+                    // Meneame comments start from #1 (since #0 is the new itself)
+                    var referredComment = commentsList.model.count - parseInt(link.substr(1), 10)
+                    commentsList.positionViewAtIndex(referredComment, ListView.Beginning)
+                } else {
+                    Qt.openUrlExternally(link)
+                }
+            }
         }
 
         Text {

@@ -16,3 +16,11 @@ function getDate(text) {
     var date = new Date(text)
     return date
 }
+
+function cleanUpComments(text) {
+    return text.replace(/&#187;&nbsp;autor.*/g, '')
+}
+
+function startsWith(text, str) {
+    return (text.match('^' + str) == str)
+}
