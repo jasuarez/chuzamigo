@@ -26,6 +26,7 @@ Item {
     property real headerHeight: (appWindow.inPortrait ?
                                      UIConstants.LIST_ITEM_HEIGHT_DEFAULT :
                                      UIConstants.LIST_ITEM_HEIGHT_SMALL)
+    property variant lastUpdate: new Date
 
     BorderImage {
         id: background
@@ -56,21 +57,34 @@ Item {
         }
     }
 
-
-    Text {
-        id: refreshHeaderText
+    Column {
         anchors.verticalCenter: refreshHeaderImage.verticalCenter
         anchors.left: refreshHeaderImage.right
         anchors.leftMargin: UIConstants.DEFAULT_MARGIN
-        font.pixelSize: UIConstants.FONT_LARGE
-        font.family: "Nokia Pure Text Light"
-        color: UIConstants.COLOR_BUTTON_DISABLED_FOREGROUND
-        text: loading ? 'Actualizando' : 'Pulsa para actualizar'
+
+        Text {
+            id: refreshHeaderText
+            font.pixelSize: UIConstants.FONT_LARGE
+            font.family: "Nokia Pure Text Light"
+            color: UIConstants.COLOR_BUTTON_DISABLED_FOREGROUND
+            text: loading ? 'Actualizando' : 'Pulsa para actualizar'
+        }
+
+        Text {
+            id: refreshHeaderLastUpdate
+            font.pixelSize: UIConstants.FONT_XXSMALL
+            font.family: "Nokia Pure Text Light"
+            color: UIConstants.COLOR_BUTTON_DISABLED_FOREGROUND
+            text: 'Última actualización: ' + Qt.formatDateTime(lastUpdate)
+        }
     }
 
     MouseArea {
         id: refreshHeaderMouseArea
         anchors.fill: parent
-        onClicked: parent.clicked()
+        onClicked: {
+            parent.clicked()
+            lastUpdate = new Date
+        }
     }
 }
