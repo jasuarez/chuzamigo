@@ -23,6 +23,10 @@ LIBS += -lmdeclarativecache
 # Input
 SOURCES += main.cpp \
     controller.cpp
+
+HEADERS += \
+    controller.h
+
 OTHER_FILES += \
     qml/main.qml \
     qml/MainView.qml \
@@ -35,11 +39,11 @@ OTHER_FILES += \
     qml/CommentsHeader.qml \
     qml/Header.qml \
     qml/Divider.qml \
+    qml/RefreshHeader.qml \
+    qml/AboutView.qml \
     resources/icon-view-details.png \
     resources/icon-view-comments.png \
     resources/icon-meneamigo.png \
-    qml/RefreshHeader.qml \
-    qml/AboutView.qml \
     resources/meneamigo.svg
 
 RESOURCES += \
@@ -71,6 +75,3 @@ unix {
     splash.files += ../data/mnm-splash-landscape.jpg
     splash.files += ../data/mnm-splash-portrait.jpg
 }
-
-HEADERS += \
-    controller.h
