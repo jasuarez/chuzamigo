@@ -41,93 +41,81 @@ Page {
             leftMargin: UIConstants.DEFAULT_MARGIN
             rightMargin: UIConstants.DEFAULT_MARGIN
         }
+        contentHeight: contentColumn.height
 
-        contentHeight: aboutImage.height +
-                       aboutVersion.height +
-                       aboutCopyright.height +
-                       aboutContact.height +
-                       aboutMeneameDisclaimer.height +
-                       aboutLicense.height +
-                       UIConstants.DEFAULT_MARGIN * 2
-
-        Image {
-            id: aboutImage
-            anchors.top: parent.top
-            anchors.horizontalCenter: parent.horizontalCenter
-            source: 'qrc:/resources/meneamigo.svg'
-        }
-
-        Text {
-            id: aboutVersion
-            text: 'Meneamigo 0.1'
-            anchors.top: aboutImage.bottom
-            anchors.topMargin: UIConstants.DEFAULT_MARGIN
-            anchors.horizontalCenter: parent.horizontalCenter
-            font.family: UIConstants.FONT_FAMILY
-            font.pixelSize: UIConstants.FONT_XLARGE
-            color: !theme.inverted ?
-                       UIConstants.COLOR_FOREGROUND :
-                       UIConstants.COLOR_INVERTED_FOREGROUND
-        }
-
-        Text {
-            id: aboutCopyright
-            text: 'Copyright © 2011 Simon Pena'
-            anchors.top: aboutVersion.bottom
-            anchors.topMargin: UIConstants.DEFAULT_MARGIN
-            anchors.horizontalCenter: parent.horizontalCenter
-            font.family: UIConstants.FONT_FAMILY
-            font.pixelSize: UIConstants.FONT_XLARGE
-            color: !theme.inverted ?
-                       UIConstants.COLOR_FOREGROUND :
-                       UIConstants.COLOR_INVERTED_FOREGROUND
-        }
-
-        Text {
-            id: aboutContact
-            anchors.top: aboutCopyright.bottom
-            anchors.topMargin: UIConstants.DEFAULT_MARGIN
-            anchors.horizontalCenter: parent.horizontalCenter
-            font.family: UIConstants.FONT_FAMILY
-            font.pixelSize: UIConstants.FONT_LSMALL
-            color: !theme.inverted ?
-                       UIConstants.COLOR_FOREGROUND :
-                       UIConstants.COLOR_INVERTED_FOREGROUND
-            text: '<a href="mailto:spena@igalia.com">spena@igalia.com</a> | ' +
-                  '<a href="http://www.simonpena.com">simonpena.com</a>'
-            onLinkActivated: Qt.openUrlExternally(link)
-        }
-
-        Text {
-            id: aboutMeneameDisclaimer
-            anchors.top: aboutContact.bottom
-            anchors.topMargin: UIConstants.DEFAULT_MARGIN
-            font.family: UIConstants.FONT_FAMILY
-            font.pixelSize: UIConstants.FONT_LSMALL
-            color: !theme.inverted ?
-                       UIConstants.COLOR_FOREGROUND :
-                       UIConstants.COLOR_INVERTED_FOREGROUND
+        Column {
+            id: contentColumn
+            spacing: UIConstants.DEFAULT_MARGIN
             width: parent.width
-            wrapMode: Text.WordWrap
-            text: 'Esta aplicación usa <a href="http://meneame.net/">Menéame</a> pero no está afiliado ni certificado por ellos.'
-            onLinkActivated: Qt.openUrlExternally(link)
-        }
 
-        Text {
-            id: aboutLicense
-            anchors.top: aboutMeneameDisclaimer.bottom
-            anchors.topMargin: UIConstants.DEFAULT_MARGIN
-            font.pixelSize: UIConstants.FONT_LSMALL
-            color: !theme.inverted ?
-                       UIConstants.COLOR_FOREGROUND :
-                       UIConstants.COLOR_INVERTED_FOREGROUND
-            width: parent.width
-            wrapMode: Text.WordWrap
-            font.family: "Nokia Pure Text Light"
-            text: license
-            onLinkActivated: Qt.openUrlExternally(link)
+            Image {
+                id: aboutImage
+                anchors.horizontalCenter: parent.horizontalCenter
+                source: 'qrc:/resources/meneamigo.svg'
+            }
+
+            Text {
+                id: aboutVersion
+                text: 'Meneamigo 0.1'
+                anchors.horizontalCenter: parent.horizontalCenter
+                font.family: UIConstants.FONT_FAMILY
+                font.pixelSize: UIConstants.FONT_XLARGE
+                color: !theme.inverted ?
+                           UIConstants.COLOR_FOREGROUND :
+                           UIConstants.COLOR_INVERTED_FOREGROUND
+            }
+
+            Text {
+                id: aboutCopyright
+                text: 'Copyright © 2011 Simon Pena'
+                anchors.horizontalCenter: parent.horizontalCenter
+                font.family: UIConstants.FONT_FAMILY
+                font.pixelSize: UIConstants.FONT_XLARGE
+                color: !theme.inverted ?
+                           UIConstants.COLOR_FOREGROUND :
+                           UIConstants.COLOR_INVERTED_FOREGROUND
+            }
+
+            Text {
+                id: aboutContact
+                anchors.horizontalCenter: parent.horizontalCenter
+                font.family: UIConstants.FONT_FAMILY
+                font.pixelSize: UIConstants.FONT_LSMALL
+                color: !theme.inverted ?
+                           UIConstants.COLOR_FOREGROUND :
+                           UIConstants.COLOR_INVERTED_FOREGROUND
+                text: '<a href="mailto:spena@igalia.com">spena@igalia.com</a> | ' +
+                      '<a href="http://www.simonpena.com">simonpena.com</a>'
+                onLinkActivated: Qt.openUrlExternally(link)
+            }
+
+            Text {
+                id: aboutMeneameDisclaimer
+                font.family: UIConstants.FONT_FAMILY
+                font.pixelSize: UIConstants.FONT_LSMALL
+                color: !theme.inverted ?
+                           UIConstants.COLOR_FOREGROUND :
+                           UIConstants.COLOR_INVERTED_FOREGROUND
+                width: parent.width
+                wrapMode: Text.WordWrap
+                text: 'Esta aplicación usa <a href="http://meneame.net/">Menéame</a> pero no está afiliado ni certificado por ellos.'
+                onLinkActivated: Qt.openUrlExternally(link)
+            }
+
+            Text {
+                id: aboutLicense
+                font.pixelSize: UIConstants.FONT_LSMALL
+                color: !theme.inverted ?
+                           UIConstants.COLOR_FOREGROUND :
+                           UIConstants.COLOR_INVERTED_FOREGROUND
+                width: parent.width
+                wrapMode: Text.WordWrap
+                font.family: "Nokia Pure Text Light"
+                text: license
+                onLinkActivated: Qt.openUrlExternally(link)
+            }
         }
-    }
+        }
 
     ScrollDecorator {
         flickableItem: flick
