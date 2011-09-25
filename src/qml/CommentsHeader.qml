@@ -24,7 +24,7 @@ Item {
         wrapMode: Text.WordWrap
         maximumLineCount: 1
         elide: Text.ElideRight
-        text: 'Comentarios para ' + parent.text
+        text: qsTr('Comments for %1').arg(parent.text)
     }
 
     Rectangle {

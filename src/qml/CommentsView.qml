@@ -10,7 +10,7 @@ Page {
         MenuLayout {
             MenuItem {
                 id: launchEntry
-                text: 'Ver noticia original'
+                text: qsTr('Open original news')
                 onClicked: Qt.openUrlExternally(currentEntry.mnm_url)
             }
         }
@@ -176,7 +176,7 @@ Page {
             anchors.top: extendedContent.bottom
             text: (commentsList.model.status != XmlListModel.Ready ?
                       currentEntry.mnm_comments :
-                      commentsList.model.count) + ' comentarios'
+                      qsTr('%1 comments').arg(commentsList.model.count))
         }
 
         ListView {

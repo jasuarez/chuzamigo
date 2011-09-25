@@ -67,7 +67,7 @@ Page {
         MenuLayout {
             MenuItem {
                 id: aboutEntry
-                text: 'Acerca de'
+                text: qsTr('About')
                 onClicked: appWindow.pageStack.push(aboutView)
             }
         }
@@ -77,7 +77,7 @@ Page {
 
         TumblerButton {
             anchors.horizontalCenter: parent.horizontalCenter
-            text: categorySelectionDialog.model.get(categorySelectionDialog.selectedIndex).name
+            text: qsTr(categorySelectionDialog.model.get(categorySelectionDialog.selectedIndex).name)
             onClicked: categorySelectionDialog.open()
         }
 
@@ -92,12 +92,12 @@ Page {
 
     SelectionDialog {
         id: categorySelectionDialog
-        titleText: 'Categoría'
+        titleText: qsTr('Category')
         selectedIndex: 0
 
         model: ListModel {
-            ListElement { name: 'Portada' }
-            ListElement { name: 'Pendientes' }
+            ListElement { name: 'Frontpage' }
+            ListElement { name: 'Pending' }
         }
     }
 
@@ -203,11 +203,11 @@ Page {
             font.pixelSize: UIConstants.FONT_XLARGE
             font.family: UIConstants.FONT_FAMILY
             color: UIConstants.COLOR_BUTTON_DISABLED_FOREGROUND
-            text: 'Error al acceder a Menéame'
+            text: qsTr('Error while accessing Meneame')
         }
 
         Button {
-            text: 'Volver a intentar'
+            text: qsTr('Try again')
             anchors.horizontalCenter: listModelErrorText.horizontalCenter
             onClicked: {
                 firstLoad = true

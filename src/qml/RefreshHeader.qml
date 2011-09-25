@@ -67,7 +67,7 @@ Item {
             font.pixelSize: UIConstants.FONT_LARGE
             font.family: "Nokia Pure Text Light"
             color: UIConstants.COLOR_BUTTON_DISABLED_FOREGROUND
-            text: loading ? 'Actualizando' : 'Pulsa para actualizar'
+            text: loading ? qsTr('Updating') : qsTr('Tap to update')
         }
 
         Text {
@@ -75,7 +75,7 @@ Item {
             font.pixelSize: UIConstants.FONT_XXSMALL
             font.family: "Nokia Pure Text Light"
             color: UIConstants.COLOR_BUTTON_DISABLED_FOREGROUND
-            text: 'Última actualización: ' + Qt.formatDateTime(lastUpdate)
+            text: qsTr('Last update: %1').arg(Qt.formatDateTime(lastUpdate))
         }
     }
 

@@ -56,10 +56,8 @@ Item {
                 anchors.left: parent.left
                 font.pixelSize: UIConstants.FONT_XSMALL
                 font.family: UIConstants.FONT_FAMILY
-                text: '#' + model.mnm_order + ' | karma: ' +
-                      model.mnm_karma + ' | Por ' +
-                      model.mnm_user
                 color: 'darkorange'
+                text: qsTr('#%1 | karma: %2 | By %3').arg(model.mnm_order).arg(model.mnm_karma).arg(model.mnm_user)
             }
 
             Text {

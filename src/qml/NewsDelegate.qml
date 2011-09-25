@@ -74,7 +74,7 @@ Item {
                             Text {
                                 font.pixelSize: UIConstants.FONT_XXSMALL
                                 font.family: "Nokia Pure Text Light"
-                                text: 'meneos'
+                                text: qsTr('shakes')
                                 color: 'white'
                             }
                         }
@@ -100,13 +100,13 @@ Item {
                             font.pixelSize: UIConstants.FONT_XXSMALL
                             font.family: UIConstants.FONT_FAMILY
                             text: if (votedStatus == MNM.VOTE_DONE) {
-                                      'chachi'
+                                      qsTr('cool')
                                   } else if (votedStatus == MNM.VOTE_AVAILABLE) {
-                                      'vota'
+                                      qsTr('vote')
                                   } else if (votedStatus == MNM.VOTE_WAITING) {
                                       '...'
                                   } else {
-                                      'error'
+                                      qsTr('error')
                                   }
 
                             anchors.horizontalCenter: parent.horizontalCenter
@@ -206,7 +206,7 @@ Item {
                             anchors.leftMargin: UIConstants.PADDING_LARGE
                             font.pixelSize: UIConstants.FONT_XXSMALL
                             font.family: "Nokia Pure Text Light"
-                            text: model.mnm_comments + ' comentarios'
+                            text: qsTr('%1 comments').arg(model.mnm_comments)
                             color: 'orange'
                         }
                     }
@@ -216,7 +216,7 @@ Item {
                         anchors.leftMargin: UIConstants.PADDING_LARGE
                         font.pixelSize: UIConstants.FONT_XXSMALL
                         font.family: "Nokia Pure Text Light"
-                        text: 'Por ' + model.mnm_user
+                        text: qsTr('By %1').arg(model.mnm_user)
                         color: UIConstants.COLOR_BUTTON_DISABLED_FOREGROUND
                     }
 

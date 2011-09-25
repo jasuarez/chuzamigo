@@ -19,5 +19,6 @@
         <file>resources/icon-view-details.png</file>
         <file>resources/icon-refresh.png</file>
         <file>resources/meneamigo.svg</file>
+        <file>l10n/es.qm</file>
     </qresource>
 </RCC>
