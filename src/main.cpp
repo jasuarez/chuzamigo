@@ -3,10 +3,20 @@
 #include <QApplication>
 #include <QDeclarativeView>
 #include <MDeclarativeCache>
+#include <QTranslator>
+#include <QLocale>
 
 Q_DECL_EXPORT int main(int argc, char *argv[])
 {
     QApplication *app = MDeclarativeCache::qApplication(argc, argv);
+
+    QString locale(QLocale::system().name());
+    QTranslator translator;
+
+    if (translator.load("l10n/" + locale, ":/")) {
+        app->installTranslator(&translator);
+    }
+
     QDeclarativeView *view = MDeclarativeCache::qDeclarativeView();
 
     QDeclarativeContext *context = view->rootContext();
