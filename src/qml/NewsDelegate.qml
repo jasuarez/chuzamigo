@@ -267,12 +267,25 @@ Item {
                     text: model.description
                 }
 
-                Text {
-                    font.pixelSize: UIConstants.FONT_XSMALL
-                    font.family: UIConstants.FONT_FAMILY
-                    text: 'karma: ' + model.mnm_karma + ' | ' +
-                          Qt.formatDateTime(MNM.getDate(model.pubDate))
-                    color: 'darkorange'
+                Item {
+                    width: parent.width
+                    height: childrenRect.height
+
+                    Text {
+                        anchors.left: parent.left
+                        font.pixelSize: UIConstants.FONT_XSMALL
+                        font.family: UIConstants.FONT_FAMILY
+                        text: 'karma: ' + model.mnm_karma
+                        color: 'darkorange'
+                    }
+
+                    Text {
+                        anchors.right: parent.right
+                        font.pixelSize: UIConstants.FONT_XSMALL
+                        font.family: UIConstants.FONT_FAMILY
+                        text: Qt.formatDateTime(MNM.getDate(model.pubDate))
+                        color: 'darkorange'
+                    }
                 }
             }
         }

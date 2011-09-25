@@ -56,10 +56,10 @@ Item {
                 anchors.left: parent.left
                 font.pixelSize: UIConstants.FONT_XSMALL
                 font.family: UIConstants.FONT_FAMILY
-                text: '#' + model.mnm_order + ' | ' +
-                      model.mnm_karma + ' karma | Por ' +
+                text: '#' + model.mnm_order + ' | karma: ' +
+                      model.mnm_karma + ' | Por ' +
                       model.mnm_user
-                color: 'orange'
+                color: 'darkorange'
             }
 
             Text {
@@ -67,7 +67,7 @@ Item {
                 font.pixelSize: UIConstants.FONT_XSMALL
                 font.family: UIConstants.FONT_FAMILY
                 text: Qt.formatDateTime(MNM.getDate(model.pubDate))
-                color: 'orange'
+                color: 'darkorange'
             }
         }
     }
