@@ -4,11 +4,15 @@
 #include <QDeclarativeView>
 #include <MDeclarativeCache>
 #include <QTranslator>
+#include <QTextCodec>
 #include <QLocale>
 
 Q_DECL_EXPORT int main(int argc, char *argv[])
 {
     QApplication *app = MDeclarativeCache::qApplication(argc, argv);
+
+    // Assume that strings in source files are UTF-8
+    QTextCodec::setCodecForTr(QTextCodec::codecForName("utf8"));
 
     QString locale(QLocale::system().name());
     QTranslator translator;
