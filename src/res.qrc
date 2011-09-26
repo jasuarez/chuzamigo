@@ -7,7 +7,6 @@
         <file>qml/NewsDelegate.qml</file>
         <file>qml/CommentsDelegate.qml</file>
         <file>qml/CommentsView.qml</file>
-        <file>qml/CommentsHeader.qml</file>
         <file>qml/Header.qml</file>
         <file>qml/Divider.qml</file>
         <file>qml/AboutView.qml</file>

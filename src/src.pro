@@ -36,7 +36,6 @@ OTHER_FILES += \
     qml/CommentsDelegate.qml \
     qml/CommentsView.qml \
     qml/MNM.js \
-    qml/CommentsHeader.qml \
     qml/Header.qml \
     qml/Divider.qml \
     qml/RefreshHeader.qml \

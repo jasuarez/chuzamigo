@@ -18,14 +18,6 @@
     </message>
 </context>
 <context>
-    <name>CommentsHeader</name>
-    <message>
-        <location filename="../qml/CommentsHeader.qml" line="27"/>
-        <source>Comments for %1</source>
-        <translation>Comentarios para %1</translation>
-    </message>
-</context>
-<context>
     <name>CommentsView</name>
     <message>
         <location filename="../qml/CommentsView.qml" line="13"/>
@@ -122,7 +114,7 @@
         <translation>Actualizando</translation>
     </message>
     <message>
-        <location filename="../qml/RefreshHeader.qml" line="78"/>
+        <location filename="../qml/RefreshHeader.qml" line="80"/>
         <source>Last update: </source>
         <translation>Última actualización: </translation>
     </message>
