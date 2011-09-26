@@ -4,11 +4,6 @@
 <context>
     <name>AboutView</name>
     <message>
-        <location filename="../qml/AboutView.qml" line="6"/>
-        <source>This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.&lt;br /&gt;&lt;br /&gt;This package is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.&lt;br /&gt;&lt;br /&gt;You should have received a copy of the GNU General Public License along with this program. If not, see &lt;a href=&quot;http://www.gnu.org/licenses&quot;&gt;http://www.gnu.org/licenses&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../qml/AboutView.qml" line="101"/>
         <source>This application uses &lt;a href=&quot;http://meneame.net/&quot;&gt;Meneame&lt;/a&gt; but it is not affiliated nor certified by them.</source>
         <translation>Esta aplicación usa &lt;a href=&quot;http://meneame.net/&quot;&gt;Menéame&lt;/a&gt; pero no está afiliado ni certificado por ellos..</translation>

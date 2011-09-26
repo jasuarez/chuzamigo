@@ -3,7 +3,7 @@ import com.nokia.meego 1.0
 import "file:///usr/lib/qt4/imports/com/meego/UIConstants.js" as UIConstants
 
 Page {
-    property string license: qsTr('This program is free software: you can redistribute it and/or modify ' +
+    property string license: 'This program is free software: you can redistribute it and/or modify ' +
         'it under the terms of the GNU General Public License as published by ' +
         'the Free Software Foundation, either version 3 of the License, or ' +
         '(at your option) any later version.<br /><br />' +
@@ -15,7 +15,7 @@ Page {
 
         'You should have received a copy of the GNU General Public License ' +
         'along with this program. If not, see ' +
-        '<a href="http://www.gnu.org/licenses">http://www.gnu.org/licenses</a><br /><br />')
+        '<a href="http://www.gnu.org/licenses">http://www.gnu.org/licenses</a><br /><br />'
 
     tools: ToolBarLayout {
         ToolIcon {
