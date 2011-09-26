@@ -18,6 +18,8 @@ Page {
     }
 
     Component.onCompleted: {
+        categoriesModel.get(0).name = qsTr('Frontpage')
+        categoriesModel.get(1).name = qsTr('Pending')
         asyncWorker.sendMessage({ method: MNM.METHOD_AUTH, url: MNM.BASE_URL })
     }
 
@@ -90,15 +92,18 @@ Page {
 
     Header { id: header }
 
+    ListModel {
+        id: categoriesModel
+        ListElement { name: 'Frontpage' }
+        ListElement { name: 'Pending' }
+    }
+
     SelectionDialog {
         id: categorySelectionDialog
         titleText: qsTr('Category')
         selectedIndex: 0
 
-        model: ListModel {
-            ListElement { name: 'Frontpage' }
-            ListElement { name: 'Pending' }
-        }
+        model: categoriesModel
     }
 
     NewsModel {

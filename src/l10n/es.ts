@@ -46,22 +46,32 @@
 <context>
     <name>MainView</name>
     <message>
-        <location filename="../qml/MainView.qml" line="70"/>
+        <location filename="../qml/MainView.qml" line="21"/>
+        <source>Frontpage</source>
+        <translation>Portada</translation>
+    </message>
+    <message>
+        <location filename="../qml/MainView.qml" line="22"/>
+        <source>Pending</source>
+        <translation>Pendientes</translation>
+    </message>
+    <message>
+        <location filename="../qml/MainView.qml" line="72"/>
         <source>About</source>
         <translation>Acerca de</translation>
     </message>
     <message>
-        <location filename="../qml/MainView.qml" line="95"/>
+        <location filename="../qml/MainView.qml" line="103"/>
         <source>Category</source>
         <translation>Categoría</translation>
     </message>
     <message>
-        <location filename="../qml/MainView.qml" line="206"/>
+        <location filename="../qml/MainView.qml" line="211"/>
         <source>Error while accessing Meneame</source>
         <translation>Error al acceder a Menéame</translation>
     </message>
     <message>
-        <location filename="../qml/MainView.qml" line="210"/>
+        <location filename="../qml/MainView.qml" line="215"/>
         <source>Try again</source>
         <translation>Volver a intentar</translation>
     </message>
@@ -115,19 +125,6 @@
         <location filename="../qml/RefreshHeader.qml" line="78"/>
         <source>Last update: %1</source>
         <translation>Última actualización: %1</translation>
-    </message>
-</context>
-<context>
-    <name>l10n-dummy</name>
-    <message>
-        <location filename="../qml/l10n-dummy.qml" line="2"/>
-        <source>Frontpage</source>
-        <translation>Portada</translation>
-    </message>
-    <message>
-        <location filename="../qml/l10n-dummy.qml" line="3"/>
-        <source>Pending</source>
-        <translation>Pendientes</translation>
     </message>
 </context>
 </TS>
