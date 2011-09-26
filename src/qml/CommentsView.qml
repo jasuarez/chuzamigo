@@ -144,8 +144,7 @@ Page {
                         anchors.left: parent.left
                         font.pixelSize: UIConstants.FONT_XSMALL
                         font.family: UIConstants.FONT_FAMILY
-                        text: 'karma: ' + currentEntry.mnm_karma + ' | Por ' +
-                              currentEntry.mnm_user
+                        text: qsTr('karma: %1 | By %2').arg(currentEntry.mnm_karma).arg(currentEntry.mnm_user)
                         color: 'darkorange'
                     }
 
@@ -174,9 +173,9 @@ Page {
         Divider {
             id: divider
             anchors.top: extendedContent.bottom
-            text: (commentsList.model.status != XmlListModel.Ready ?
-                      currentEntry.mnm_comments :
-                      qsTr('%1 comments').arg(commentsList.model.count))
+            text: qsTr('%1 comments').arg(commentsList.model.status != XmlListModel.Ready ?
+                                              currentEntry.mnm_comments :
+                                              commentsList.model.count)
         }
 
         ListView {

@@ -75,7 +75,9 @@ Item {
             font.pixelSize: UIConstants.FONT_XXSMALL
             font.family: "Nokia Pure Text Light"
             color: UIConstants.COLOR_BUTTON_DISABLED_FOREGROUND
-            text: qsTr('Last update: %1').arg(Qt.formatDateTime(lastUpdate))
+            // TODO: figure out how to provide translatable date while
+            // keeping the binding
+            text: qsTr('Last update: ') + Qt.formatDateTime(lastUpdate)
         }
     }
 

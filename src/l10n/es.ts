@@ -6,7 +6,7 @@
     <message>
         <location filename="../qml/AboutView.qml" line="101"/>
         <source>This application uses &lt;a href=&quot;http://meneame.net/&quot;&gt;Meneame&lt;/a&gt; but it is not affiliated nor certified by them.</source>
-        <translation>Esta aplicación usa &lt;a href=&quot;http://meneame.net/&quot;&gt;Menéame&lt;/a&gt; pero no está afiliado ni certificado por ellos..</translation>
+        <translation>Esta aplicación usa &lt;a href=&quot;http://meneame.net/&quot;&gt;Menéame&lt;/a&gt; pero no está afiliado ni certificado por ellos.</translation>
     </message>
 </context>
 <context>
@@ -33,7 +33,12 @@
         <translation>Ver noticia original</translation>
     </message>
     <message>
-        <location filename="../qml/CommentsView.qml" line="179"/>
+        <location filename="../qml/CommentsView.qml" line="147"/>
+        <source>karma: %1 | By %2</source>
+        <translation>karma: %1 | Por %2</translation>
+    </message>
+    <message>
+        <location filename="../qml/CommentsView.qml" line="176"/>
         <source>%1 comments</source>
         <translation>%1 comentarios</translation>
     </message>
@@ -118,8 +123,8 @@
     </message>
     <message>
         <location filename="../qml/RefreshHeader.qml" line="78"/>
-        <source>Last update: %1</source>
-        <translation>Última actualización: %1</translation>
+        <source>Last update: </source>
+        <translation>Última actualización: </translation>
     </message>
 </context>
 </TS>
