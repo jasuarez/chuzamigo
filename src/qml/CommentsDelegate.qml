@@ -34,7 +34,7 @@ Item {
             font.pixelSize: UIConstants.FONT_SMALL
             font.family: UIConstants.FONT_FAMILY
             width: parent.width
-            wrapMode: Text.WordWrap
+            wrapMode: Text.Wrap
             text: MNM.cleanUpComments(model.description)
             onLinkActivated: {
                 // Links to comments start with '/'

@@ -263,7 +263,7 @@ Item {
                     font.pixelSize: UIConstants.FONT_SMALL
                     font.family: UIConstants.FONT_FAMILY
                     width: parent.width
-                    wrapMode: Text.WordWrap
+                    wrapMode: Text.Wrap
                     text: model.description
                 }
 
