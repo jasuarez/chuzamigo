@@ -26,6 +26,8 @@ Item {
     height: headerRectangle.height
     width: parent.width
 
+    signal clicked()
+
     Rectangle {
         id: headerRectangle
         width: parent.width
@@ -55,5 +57,11 @@ Item {
         font.family: UIConstants.FONT_FAMILY
         text: 'Meneamigo'
         color: 'white'
+    }
+
+    MouseArea {
+        id: headerMouseArea
+        anchors.fill: parent
+        onClicked: parent.clicked()
     }
 }

@@ -52,7 +52,10 @@ Page {
         }
     }
 
-    Header { id: header }
+    Header {
+        id: header
+        onClicked: commentsList.positionViewAtBeginning()
+    }
 
     property variant currentEntry
     property real contentYPos: commentsList.visibleArea.yPosition *

@@ -109,7 +109,10 @@ Page {
         }
     }
 
-    Header { id: header }
+    Header {
+        id: header
+        onClicked: list.positionViewAtBeginning()
+    }
 
     ListModel {
         id: categoriesModel
