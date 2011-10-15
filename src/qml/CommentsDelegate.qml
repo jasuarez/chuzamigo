@@ -37,11 +37,15 @@ Item {
             wrapMode: Text.Wrap
             text: MNM.cleanUpComments(model.description)
             onLinkActivated: {
-                // Links to comments start with '/'
+                // Internal links start with '/'
                 if (MNM.startsWith(link, '/')) {
-                    // Meneame comments start from #1 (since #0 is the new itself)
-                    var referredComment = commentsList.model.count - parseInt(link.substr(1), 10)
-                    commentsList.positionViewAtIndex(referredComment, ListView.Beginning)
+                    var commentNumber = parseInt(link.substr(1), 10)
+                    // Make sure the internal link is to another comment
+                    if (commentNumber) {
+                        // Meneame comments start from #1 (since #0 is the entry itself)
+                        var referredComment = commentsList.model.count - commentNumber
+                        commentsList.positionViewAtIndex(referredComment, ListView.Beginning)
+                    }
                 } else {
                     Qt.openUrlExternally(link)
                 }
