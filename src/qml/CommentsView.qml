@@ -166,6 +166,8 @@ Page {
                 if (status == XmlListModel.Ready ||
                         status == XmlListModel.Error) {
                     onLoadingFinished()
+                    // FIXME: Setting a binding doesn't seem to work
+                    noCommentsText.visible = (commentsList.model.count === 0)
                 }
             }
         }
@@ -225,6 +227,16 @@ Page {
                         onLoadingFinished()
                     }
                 }
+            }
+
+            Text {
+                id: noCommentsText
+                font.pixelSize: UIConstants.FONT_XLARGE
+                font.family: UIConstants.FONT_FAMILY
+                color: UIConstants.COLOR_BUTTON_DISABLED_FOREGROUND
+                anchors.centerIn: parent
+                visible: false
+                text: qsTr('No comments found')
             }
         }
 

@@ -30,13 +30,18 @@
         <translation>karma: %1 | By %2</translation>
     </message>
     <message numerus="yes">
-        <location filename="../qml/CommentsView.qml" line="177"/>
-        <location filename="../qml/CommentsView.qml" line="178"/>
+        <location filename="../qml/CommentsView.qml" line="179"/>
+        <location filename="../qml/CommentsView.qml" line="180"/>
         <source>%Ln comment(s)</source>
         <translation>
             <numerusform>%Ln comment</numerusform>
             <numerusform>%Ln comments</numerusform>
         </translation>
+    </message>
+    <message>
+        <location filename="../qml/CommentsView.qml" line="239"/>
+        <source>No comments found</source>
+        <translation>No comments found</translation>
     </message>
 </context>
 <context>
