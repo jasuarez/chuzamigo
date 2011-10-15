@@ -17,7 +17,7 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
     QString locale(QLocale::system().name());
     QTranslator translator;
 
-    if (translator.load("l10n/" + locale, ":/")) {
+    if (translator.load("l10n/meneamigo." + locale, ":/")) {
         app->installTranslator(&translator);
     }
 
