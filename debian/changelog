@@ -1,3 +1,14 @@
+meneamigo (0.3) unstable; urgency=low
+
+  * Added L10n support (by Adrian Perez)
+  * Fixed issue #2 - Urls don't wrap and sometimes end up out of the comments
+    area
+  * Check that internal links point to comments before following them
+  * Show a message when there are no comments on an entry
+  * Added license to the files
+
+ -- Simon Pena <spena@igalia.com>  Sat, 15 Oct 2011 18:32:57 +0300
+
 meneamigo (0.2) unstable; urgency=low
 
   * Allow following links inside comments
