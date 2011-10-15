@@ -173,9 +173,9 @@ Page {
         Divider {
             id: divider
             anchors.top: extendedContent.bottom
-            text: qsTr('%1 comments').arg(commentsList.model.status != XmlListModel.Ready ?
-                                              currentEntry.mnm_comments :
-                                              commentsList.model.count)
+            text: (commentsList.model.status != XmlListModel.Ready ?
+                       qsTr('%Ln comment(s)', '', currentEntry.mnm_comments) :
+                       qsTr('%Ln comment(s)', '', commentsList.model.count))
         }
 
         ListView {

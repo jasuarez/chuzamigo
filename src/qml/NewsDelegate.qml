@@ -206,7 +206,7 @@ Item {
                             anchors.leftMargin: UIConstants.PADDING_LARGE
                             font.pixelSize: UIConstants.FONT_XXSMALL
                             font.family: "Nokia Pure Text Light"
-                            text: qsTr('%1 comments').arg(model.mnm_comments)
+                            text: qsTr('%Ln comment(s)', '', model.mnm_comments)
                             color: 'orange'
                         }
                     }
