@@ -283,7 +283,7 @@ Item {
                     font.family: UIConstants.FONT_FAMILY
                     width: parent.width
                     wrapMode: Text.Wrap
-                    text: model.description
+                    text: MNM.sanitizeText(model.description)
                 }
 
                 Item {

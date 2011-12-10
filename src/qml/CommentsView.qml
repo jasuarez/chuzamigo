@@ -155,7 +155,7 @@ Page {
                     font.family: UIConstants.FONT_FAMILY
                     width: parent.width
                     wrapMode: Text.WordWrap
-                    text: currentEntry.description
+                    text: MNM.sanitizeText(currentEntry.description)
                 }
 
                 Item {
