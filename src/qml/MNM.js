@@ -42,7 +42,7 @@ function sanitizeText(text) {
     // "Save" existing <br /> into &lt;br /&gt;, remove all tags
     // and put the <br /> back there
     var sanitizedText = text.replace(/<br \/>/g, '&lt;br /&gt;').replace(/<.*?>/g, '').replace(/&lt;br \/&gt;/g, '<br />')
-    return sanitizedText.replace(/etiquetas.*/g, '').replace(/&#187;&nbsp;autor.*/g, '')
+    return sanitizedText.replace(/&#34;/g, '"').replace(/etiquetas.*/g, '').replace(/&#187;&nbsp;autor.*/g, '')
 }
 
 function getDate(text) {
@@ -51,7 +51,7 @@ function getDate(text) {
 }
 
 function cleanUpComments(text) {
-    return text.replace(/&#187;&nbsp;autor.*/g, '').replace(/http:\/\/mnmstatic.net\/img\/smileys\//g, '\/img\/smileys\/')
+    return text.replace(/&#187;&nbsp;autor.*/g, '').replace(/http:\/\/chuza.gl\/img\/smileys\//g, '\/img\/smileys\/')
 }
 
 function startsWith(text, str) {
