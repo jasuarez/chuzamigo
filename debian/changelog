@@ -1,4 +1,4 @@
-meneamigo (0.3) unstable; urgency=low
+chuzamobile (0.3) unstable; urgency=low
 
   * Added L10n support (by Adrian Perez)
   * Fixed issue #2 - Urls don't wrap and sometimes end up out of the comments
@@ -9,7 +9,7 @@ meneamigo (0.3) unstable; urgency=low
 
  -- Simon Pena <spena@igalia.com>  Sat, 15 Oct 2011 18:32:57 +0300
 
-meneamigo (0.2) unstable; urgency=low
+chuzamobile (0.2) unstable; urgency=low
 
   * Allow following links inside comments
   * UI improvements in comments view
@@ -19,7 +19,7 @@ meneamigo (0.2) unstable; urgency=low
 
  -- Simon Pena <spena@igalia.com>  Sun, 25 Sep 2011 00:01:03 +0300
 
-meneamigo (0.1-1) unstable; urgency=low
+chuzamobile (0.1-1) unstable; urgency=low
 
   * Initial release
 
