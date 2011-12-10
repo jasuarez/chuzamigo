@@ -42,13 +42,13 @@ Item {
                dividerText.width -
                UIConstants.DEFAULT_MARGIN
         height: 1
-        color: 'darkorange'
+        color: MNM.BORDER_COLOR
         anchors.verticalCenter: parent.verticalCenter
     }
 
     Text {
         id: dividerText
-        color: 'darkorange'
+        color: MNM.BORDER_COLOR
         font.pixelSize: UIConstants.FONT_XXSMALL
         font.family: "Nokia Pure Text Light"
         anchors.left: dividerRectangle.right

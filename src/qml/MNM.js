@@ -33,6 +33,11 @@ var VOTE_WAITING = 1
 var VOTE_DONE = 2
 var VOTE_ERROR = 3
 
+// COLORS
+
+var BORDER_COLOR = 'darkorange'
+var BUBBLE_COLOR = '#f8dcc0'
+
 function sanitizeText(text) {
     // "Save" existing <br /> into &lt;br /&gt;, remove all tags
     // and put the <br /> back there

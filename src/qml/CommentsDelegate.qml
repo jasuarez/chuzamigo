@@ -36,10 +36,10 @@ Item {
     Rectangle {
         anchors.fill: parent
         anchors.margins: UIConstants.PADDING_SMALL
-        color: '#f8dcc0'
+        color: MNM.BUBBLE_COLOR
         radius: 10
         border.width: 2
-        border.color: 'darkorange'
+        border.color: MNM.BORDER_COLOR
     }
 
     Column {
@@ -79,7 +79,7 @@ Item {
                 anchors.left: parent.left
                 font.pixelSize: UIConstants.FONT_XSMALL
                 font.family: UIConstants.FONT_FAMILY
-                color: 'darkorange'
+                color: MNM.BORDER_COLOR
                 text: qsTr('#%1 | karma: %2 | By %3').arg(model.mnm_order).arg(model.mnm_karma).arg(model.mnm_user)
             }
 
@@ -88,7 +88,7 @@ Item {
                 font.pixelSize: UIConstants.FONT_XSMALL
                 font.family: UIConstants.FONT_FAMILY
                 text: Qt.formatDateTime(MNM.getDate(model.pubDate))
-                color: 'darkorange'
+                color: MNM.BORDER_COLOR
             }
         }
     }

@@ -71,7 +71,7 @@ Item {
 
                         Rectangle {
                             anchors.fill: parent
-                            color: 'darkorange'
+                            color: MNM.BORDER_COLOR
                             radius: 10
                         }
 
@@ -110,7 +110,7 @@ Item {
                             color: 'transparent'
                             radius: 5
                             border.width: 1
-                            border.color: 'darkorange'
+                            border.color: MNM.BORDER_COLOR
                         }
 
                         Text {
@@ -129,7 +129,7 @@ Item {
                                   }
 
                             anchors.horizontalCenter: parent.horizontalCenter
-                            color: 'darkorange'
+                            color: MNM.BORDER_COLOR
                         }
                     }
                 }
@@ -226,7 +226,7 @@ Item {
                             font.pixelSize: UIConstants.FONT_XXSMALL
                             font.family: "Nokia Pure Text Light"
                             text: qsTr('%Ln comment(s)', '', model.mnm_comments)
-                            color: 'orange'
+                            color: MNM.BORDER_COLOR
                         }
                     }
 
@@ -266,10 +266,10 @@ Item {
 
             Rectangle {
                 anchors.fill: parent
-                color: '#f8dcc0'
+                color: MNM.BUBBLE_COLOR
                 radius: 10
                 border.width: 2
-                border.color: 'darkorange'
+                border.color: MNM.BORDER_COLOR
             }
 
             Column {
@@ -295,7 +295,7 @@ Item {
                         font.pixelSize: UIConstants.FONT_XSMALL
                         font.family: UIConstants.FONT_FAMILY
                         text: 'karma: ' + model.mnm_karma
-                        color: 'darkorange'
+                        color: MNM.BORDER_COLOR
                     }
 
                     Text {
@@ -303,7 +303,7 @@ Item {
                         font.pixelSize: UIConstants.FONT_XSMALL
                         font.family: UIConstants.FONT_FAMILY
                         text: Qt.formatDateTime(MNM.getDate(model.pubDate))
-                        color: 'darkorange'
+                        color: MNM.BORDER_COLOR
                     }
                 }
             }

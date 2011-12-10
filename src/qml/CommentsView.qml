@@ -138,10 +138,10 @@ Page {
 
             Rectangle {
                 anchors.fill: parent
-                color: '#f8dcc0'
+                color: MNM.BUBBLE_COLOR
                 radius: 10
                 border.width: 2
-                border.color: 'darkorange'
+                border.color: MNM.BORDER_COLOR
             }
 
             Column {
@@ -167,7 +167,7 @@ Page {
                         font.pixelSize: UIConstants.FONT_XSMALL
                         font.family: UIConstants.FONT_FAMILY
                         text: qsTr('karma: %1 | By %2').arg(currentEntry.mnm_karma).arg(currentEntry.mnm_user)
-                        color: 'darkorange'
+                        color: MNM.BORDER_COLOR
                     }
 
                     Text {
@@ -175,7 +175,7 @@ Page {
                         font.pixelSize: UIConstants.FONT_XSMALL
                         font.family: UIConstants.FONT_FAMILY
                         text: Qt.formatDateTime(MNM.getDate(currentEntry.pubDate))
-                        color: 'darkorange'
+                        color: MNM.BORDER_COLOR
                     }
                 }
             }
