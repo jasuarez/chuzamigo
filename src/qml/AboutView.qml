@@ -70,12 +70,12 @@ Page {
             Image {
                 id: aboutImage
                 anchors.horizontalCenter: parent.horizontalCenter
-                source: 'qrc:/resources/meneamigo.svg'
+                source: 'qrc:/resources/chuza.png'
             }
 
             Text {
                 id: aboutVersion
-                text: 'Meneamigo 0.3'
+                text: 'Chuza! Móbil 0.3'
                 anchors.horizontalCenter: parent.horizontalCenter
                 font.family: UIConstants.FONT_FAMILY
                 font.pixelSize: UIConstants.FONT_XLARGE
@@ -104,7 +104,7 @@ Page {
                            UIConstants.COLOR_FOREGROUND :
                            UIConstants.COLOR_INVERTED_FOREGROUND
                 text: '<a href="mailto:spena@igalia.com">spena@igalia.com</a> | ' +
-                      '<a href="http://www.simonpena.com/?utm_source=harmattan&utm_medium=apps&utm_campaign=meneamigo">simonpena.com</a>'
+                      '<a href="http://www.simonpena.com/?utm_source=harmattan&utm_medium=apps&utm_campaign=chuza">simonpena.com</a>'
                 onLinkActivated: Qt.openUrlExternally(link)
             }
 
@@ -117,7 +117,7 @@ Page {
                            UIConstants.COLOR_INVERTED_FOREGROUND
                 width: parent.width
                 wrapMode: Text.WordWrap
-                text: qsTr('This application uses <a href="http://meneame.net/">Meneame</a> but it is not affiliated nor certified by them.')
+                text: qsTr('This application uses <a href="http://chuza.gl/">Chuza</a> but it is not affiliated nor certified by them.')
                 onLinkActivated: Qt.openUrlExternally(link)
             }
 

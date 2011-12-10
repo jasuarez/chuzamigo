@@ -1,6 +1,6 @@
 TEMPLATE = app
 QT += declarative
-TARGET = "meneamigo"
+TARGET = "chuza"
 DEPENDPATH += .
 INCLUDEPATH += .
 
@@ -43,8 +43,7 @@ OTHER_FILES += \
     qml/workerscript.js \
     resources/icon-view-details.png \
     resources/icon-view-comments.png \
-    resources/icon-meneamigo.png \
-    resources/meneamigo.svg
+    resources/icon-meneamigo.png
 
 RESOURCES += \
     res.qrc

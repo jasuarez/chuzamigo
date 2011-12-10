@@ -39,24 +39,17 @@ Item {
         color: MNM.BORDER_COLOR
     }
 
-    Image {
-        id: headerIcon
-        x: UIConstants.DEFAULT_MARGIN
-        anchors.verticalCenter: headerRectangle.verticalCenter
-        source: 'qrc:/resources/icon-meneamigo.png'
-    }
-
     Text {
         id: headerText
         anchors.top: parent.top
         anchors.topMargin: appWindow.inPortrait ?
                                UIConstants.HEADER_DEFAULT_TOP_SPACING_PORTRAIT :
                                UIConstants.HEADER_DEFAULT_TOP_SPACING_LANDSCAPE
-        anchors.left: headerIcon.right
+        anchors.left: parent.left
         anchors.leftMargin: UIConstants.DEFAULT_MARGIN
         font.pixelSize: UIConstants.FONT_LARGE
         font.family: UIConstants.FONT_FAMILY
-        text: 'Meneamigo'
+        text: 'Chuza! Móbil'
         color: 'white'
     }
 

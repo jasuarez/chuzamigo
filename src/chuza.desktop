@@ -1,0 +1,7 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=0.1
+Name=Chuza!
+Exec=/usr/bin/invoker --single-instance --splash /usr/share/chuza/mnm-splash-portrait.jpg --splash-landscape /usr/share/chuza/mnm-splash-landscape.jpg --type=d /usr/bin/chuza
+Type=Application
+Icon=/usr/share/icons/hicolor/64x64/apps/chuza.png

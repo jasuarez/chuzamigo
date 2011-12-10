@@ -1,7 +1,0 @@
-[Desktop Entry]
-Encoding=UTF-8
-Version=0.1
-Name=Meneamigo
-Exec=/usr/bin/invoker --single-instance --splash /usr/share/meneamigo/mnm-splash-portrait.jpg --splash-landscape /usr/share/meneamigo/mnm-splash-landscape.jpg --type=d /usr/bin/meneamigo
-Type=Application
-Icon=/usr/share/icons/hicolor/64x64/apps/meneamigo.png

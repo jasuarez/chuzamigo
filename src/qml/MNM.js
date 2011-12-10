@@ -19,12 +19,12 @@
 
 .pragma library
 
-var RSS_PUBLISHED = 'http://www.meneame.net/rss2.php?status=published&nohtml'
-var RSS_PENDING = 'http://www.meneame.net/rss2.php?status=queued&nohtml'
-var RSS_COMMENTS = 'http://www.meneame.net/comments_rss2.php?nohtml&id='
-var ANON_VOTING_URL = 'http://meneame.net/backend/menealo.php'
+var RSS_PUBLISHED = 'http://chuza.gl/rss2.php?status=published&nohtml'
+var RSS_PENDING = 'http://chuza.gl/rss2.php?status=queued&nohtml'
+var RSS_COMMENTS = 'http://chuza.gl/comments_rss2.php?nohtml&id='
+var ANON_VOTING_URL = 'http://chuza.gl/backend/menealo.php'
 var ANONYMOUS_USER_ID = 0
-var BASE_URL = 'http://m.meneame.net'
+var BASE_URL = 'http://chuza.gl'
 var REFRESH_HEADER_TIMEOUT = 3000
 var METHOD_AUTH = 'auth'
 var METHOD_VOTE = 'vote'
@@ -35,8 +35,8 @@ var VOTE_ERROR = 3
 
 // COLORS
 
-var BORDER_COLOR = 'darkorange'
-var BUBBLE_COLOR = '#f8dcc0'
+var BORDER_COLOR = 'darkgreen'
+var BUBBLE_COLOR = '#c4e6a2'
 
 function sanitizeText(text) {
     // "Save" existing <br /> into &lt;br /&gt;, remove all tags
