@@ -21,4 +21,34 @@
         <file>l10n/meneamigo.es.qm</file>
         <file>l10n/meneamigo.qm</file>
     </qresource>
+    <qresource prefix="/img/smileys">
+        <file alias="angry.gif">resources/smileys/angry.gif</file>
+        <file alias="blank.gif">resources/smileys/blank.gif</file>
+        <file alias="cheesy.gif">resources/smileys/cheesy.gif</file>
+        <file alias="confused.gif">resources/smileys/confused.gif</file>
+        <file alias="cool.gif">resources/smileys/cool.gif</file>
+        <file alias="cry.gif">resources/smileys/cry.gif</file>
+        <file alias="embarassed.gif">resources/smileys/embarassed.gif</file>
+        <file alias="fu.gif">resources/smileys/fu.gif</file>
+        <file alias="goat.gif">resources/smileys/goat.gif</file>
+        <file alias="grin.gif">resources/smileys/grin.gif</file>
+        <file alias="huh.gif">resources/smileys/huh.gif</file>
+        <file alias="kiss.gif">resources/smileys/kiss.gif</file>
+        <file alias="laugh.gif">resources/smileys/laugh.gif</file>
+        <file alias="laugh_animated.gif">resources/smileys/laugh_animated.gif</file>
+        <file alias="laugh_static.gif">resources/smileys/laugh_static.gif</file>
+        <file alias="lipsrsealed.gif">resources/smileys/lipsrsealed.gif</file>
+        <file alias="palm.gif">resources/smileys/palm.gif</file>
+        <file alias="rolleyes.gif">resources/smileys/rolleyes.gif</file>
+        <file alias="sad.gif">resources/smileys/sad.gif</file>
+        <file alias="shame.gif">resources/smileys/shame.gif</file>
+        <file alias="shocked.gif">resources/smileys/shocked.gif</file>
+        <file alias="smiley.gif">resources/smileys/smiley.gif</file>
+        <file alias="tongue.gif">resources/smileys/tongue.gif</file>
+        <file alias="trollface.gif">resources/smileys/trollface.gif</file>
+        <file alias="trollface2.gif">resources/smileys/trollface2.gif</file>
+        <file alias="undecided.gif">resources/smileys/undecided.gif</file>
+        <file alias="wink.gif">resources/smileys/wink.gif</file>
+        <file alias="wow.gif">resources/smileys/wow.gif</file>
+    </qresource>
 </RCC>

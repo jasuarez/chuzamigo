@@ -46,7 +46,7 @@ function getDate(text) {
 }
 
 function cleanUpComments(text) {
-    return text.replace(/&#187;&nbsp;autor.*/g, '')
+    return text.replace(/&#187;&nbsp;autor.*/g, '').replace(/http:\/\/mnmstatic.net\/img\/smileys\//g, '\/img\/smileys\/')
 }
 
 function startsWith(text, str) {

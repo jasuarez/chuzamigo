@@ -16,5 +16,8 @@ Meneamigo uses LGPL icons modified from MeeGoTouch Theme Graphics
  * icon-view-comments.png comes from icon-m-common-empty-image.svg
  * icon-view-details.png comes from icon-m-content-chat.svg
 
+Meneamigo keeps a local copy of the smileys from Meneame (fetched from:
+www/img/smileys/ at http://websvn.meneame.net/)
+
 The application icon has been generated using the "Harmattan Icon Generator" by
 Javier De San Pedro Martin available at http://depot.javispedro.com/nit/hicg/
