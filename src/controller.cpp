@@ -20,8 +20,10 @@
 #include "controller.h"
 
 #include <QDeclarativeContext>
-#include <maemo-meegotouch-interfaces/shareuiinterface.h>
-#include <MDataUri>
+#ifndef QT_SIMULATOR
+    #include <maemo-meegotouch-interfaces/shareuiinterface.h>
+    #include <MDataUri>
+#endif
 
 Controller::Controller(QDeclarativeContext *context) :
     QObject(),
@@ -36,6 +38,11 @@ Controller::~Controller()
 
 void Controller::share(QString title, QString url, QString description)
 {
+#ifdef QT_SIMULATOR
+    Q_UNUSED(title)
+    Q_UNUSED(url)
+    Q_UNUSED(description)
+#else
     // See https://meego.gitorious.org/meego-sharing-framework/share-ui/blobs/master/examples/link-share/page.cpp
     // and http://forum.meego.com/showthread.php?t=3768
     MDataUri dataUri;
@@ -52,4 +59,5 @@ void Controller::share(QString title, QString url, QString description)
     } else {
         qCritical() << "Invalid interface";
     }
+#endif
 }

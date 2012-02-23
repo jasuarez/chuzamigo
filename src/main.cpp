@@ -21,14 +21,23 @@
 
 #include <QApplication>
 #include <QDeclarativeView>
-#include <MDeclarativeCache>
+#ifndef QT_SIMULATOR
+    #include <MDeclarativeCache>
+#endif
 #include <QTranslator>
 #include <QTextCodec>
 #include <QLocale>
 
 Q_DECL_EXPORT int main(int argc, char *argv[])
 {
-    QApplication *app = MDeclarativeCache::qApplication(argc, argv);
+    QApplication *app;
+    QDeclarativeView *view;
+
+#ifndef QT_SIMULATOR
+    app = MDeclarativeCache::qApplication(argc, argv);
+#else
+    app = new QApplication(argc, argv);
+#endif
 
     // Assume that strings in source files are UTF-8
     QTextCodec::setCodecForTr(QTextCodec::codecForName("utf8"));
@@ -40,7 +49,11 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
         app->installTranslator(&translator);
     }
 
-    QDeclarativeView *view = MDeclarativeCache::qDeclarativeView();
+#ifndef QT_SIMULATOR
+    view = MDeclarativeCache::qDeclarativeView();
+#else
+    view = new QDeclarativeView;
+#endif
 
     QDeclarativeContext *context = view->rootContext();
     Controller *controller = new Controller(context);
