@@ -44,7 +44,8 @@ OTHER_FILES += \
     resources/icon-view-details.png \
     resources/icon-view-comments.png \
     resources/icon-meneamigo.png \
-    resources/meneamigo.svg
+    resources/meneamigo.svg \
+    qml/constants.js
 
 RESOURCES += \
     res.qrc

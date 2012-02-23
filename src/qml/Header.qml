@@ -19,8 +19,8 @@
 
 import QtQuick 1.1
 import com.nokia.meego 1.0
-import com.nokia.extras 1.0
-import "file:///usr/lib/qt4/imports/com/meego/UIConstants.js" as UIConstants
+import com.nokia.extras 1.1
+import 'constants.js' as UIConstants
 import "MNM.js" as MNM
 
 Item {
@@ -34,8 +34,7 @@ Item {
         width: parent.width
         height: appWindow.inPortrait ?
                     UIConstants.HEADER_DEFAULT_HEIGHT_PORTRAIT :
-                    52
-        // UIConstants.HEADER_DEFAULT_HEIGHT_LANDSCAPE doesn't seem to be used in the system
+                    UIConstants.HEADER_DEFAULT_HEIGHT_LANDSCAPE
         color: MNM.BORDER_COLOR
     }
 
