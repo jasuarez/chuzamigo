@@ -32,6 +32,16 @@ Page {
                 text: qsTr('Open original news')
                 onClicked: Qt.openUrlExternally(currentEntry.mnm_url)
             }
+            MenuItem {
+                id: jumpToFirst
+                text: qsTr('Jump to beginning')
+                onClicked: commentsList.positionViewAtBeginning()
+            }
+            MenuItem {
+                id: jumpToLast
+                text: qsTr('Jump to end')
+                onClicked: commentsList.positionViewAtEnd()
+            }
         }
     }
     tools: ToolBarLayout {
@@ -47,7 +57,7 @@ Page {
         }
         ToolIcon {
             iconId: 'toolbar-view-menu'
-            onClicked: (commentsMenu.status == DialogStatus.Closed) ?
+            onClicked: (commentsMenu.status === DialogStatus.Closed) ?
                            commentsMenu.open() : commentsMenu.close()
         }
     }
@@ -188,16 +198,30 @@ Page {
                 if (status == XmlListModel.Ready ||
                         status == XmlListModel.Error) {
                     onLoadingFinished()
+                    if (count > 0) {
+                        parsedEntryComments.clear()
+                        for (var i = count -1; i > 0; i --) {
+                            var comment = new MNM.Comment(get(i).mnm_comment_id, get(i).mnm_link_id, get(i).mnm_order,
+                                                          get(i).mnm_user, get(i).mnm_votes, get(i).mnm_karma, get(i).mnm_url,
+                                                          get(i).title, get(i).link, get(i).pubDate,
+                                                          get(i).dc_creator, get(i).guid, get(i).description)
+                            parsedEntryComments.append(comment)
+                        }
+                    }
                     // FIXME: Setting a binding doesn't seem to work
                     noCommentsText.visible = (commentsList.model.count === 0)
                 }
             }
         }
 
+        ListModel {
+            id: parsedEntryComments
+        }
+
         Divider {
             id: divider
             anchors.top: extendedContent.bottom
-            text: (commentsList.model.status != XmlListModel.Ready ?
+            text: (commentsList.model.status !== XmlListModel.Ready ?
                        qsTr('%Ln comment(s)', '', currentEntry.mnm_comments) :
                        qsTr('%Ln comment(s)', '', commentsList.model.count))
         }
@@ -212,7 +236,7 @@ Page {
             }
             clip: true
             delegate: CommentsDelegate { }
-            model: entryComments
+            model: parsedEntryComments
             opacity: entryComments.status == XmlListModel.Ready ? 1 : 0.5
             header: RefreshHeader {
                 id: refreshHeader
@@ -221,7 +245,7 @@ Page {
                 yPosition: contentYPos
 
                 onClicked: {
-                    commentsList.model.reload()
+                    entryComments.reload()
                 }
             }
 

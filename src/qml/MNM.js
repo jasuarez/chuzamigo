@@ -65,3 +65,22 @@ function getAnonymousVotingURL(sessionKey, linkId) {
             '&l=' + linkId +
             '&u=' + BASE_URL
 }
+
+function Comment(commentId, linkId, order,
+                 user, votes, karma, url,
+                 title, link, pubDate,
+                 creator, guid, description) {
+    this.mnm_comment_id = commentId
+    this.mnm_link_id = linkId
+    this.mnm_order = order
+    this.mnm_user = user
+    this.mnm_votes = votes
+    this.mnm_karma = karma
+    this.mnm_url = url
+    this.title = title
+    this.link = link
+    this.pubDate = pubDate
+    this.dc_creator = creator
+    this.guid = guid
+    this.description = description
+}
