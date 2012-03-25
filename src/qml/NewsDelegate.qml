@@ -21,13 +21,13 @@ import QtQuick 1.1
 import com.nokia.meego 1.0
 import com.nokia.extras 1.1
 import 'constants.js' as UIConstants
-import "MNM.js" as MNM
+import 'MNM.js' as MNM
 
 Item {
     id: newsDelegate
-    anchors.left: parent.left
-    anchors.right: parent.right
     anchors {
+        left: parent.left
+        right: parent.right
         leftMargin: UIConstants.DEFAULT_MARGIN
         rightMargin: UIConstants.DEFAULT_MARGIN
     }
@@ -79,20 +79,23 @@ Item {
                             id: votesUpperColumn
                             anchors.centerIn: parent
 
-                            Text {
-                                font.pixelSize: model.mnm_votes < 1000 ?
-                                                    UIConstants.FONT_DEFAULT :
-                                                    UIConstants.FONT_LSMALL
-                                font.family: UIConstants.FONT_FAMILY
+                            Label {
+                                platformStyle: LabelStyle {
+                                    fontPixelSize: model.mnm_votes < 1000 ?
+                                                        UIConstants.FONT_DEFAULT :
+                                                        UIConstants.FONT_LSMALL
+                                }
                                 text: model.mnm_votes +
                                       (votedStatus == MNM.VOTE_DONE ? 1 : 0)
                                 anchors.horizontalCenter: parent.horizontalCenter
                                 color: 'white'
                             }
 
-                            Text {
-                                font.pixelSize: UIConstants.FONT_XXSMALL
-                                font.family: "Nokia Pure Text Light"
+                            Label {
+                                platformStyle: LabelStyle {
+                                    fontPixelSize: UIConstants.FONT_XXSMALL
+                                    fontFamily: "Nokia Pure Text Light"
+                                }
                                 text: qsTr('shakes')
                                 color: 'white'
                             }
@@ -113,11 +116,12 @@ Item {
                             border.color: MNM.BORDER_COLOR
                         }
 
-                        Text {
+                        Label {
                             id: shakeItText
                             y: UIConstants.PADDING_SMALL
-                            font.pixelSize: UIConstants.FONT_XXSMALL
-                            font.family: UIConstants.FONT_FAMILY
+                            platformStyle: LabelStyle {
+                                fontPixelSize: UIConstants.FONT_XXSMALL
+                            }
                             text: if (votedStatus == MNM.VOTE_DONE) {
                                       qsTr('cool')
                                   } else if (votedStatus == MNM.VOTE_AVAILABLE) {
@@ -127,7 +131,6 @@ Item {
                                   } else {
                                       qsTr('error')
                                   }
-
                             anchors.horizontalCenter: parent.horizontalCenter
                             color: MNM.BORDER_COLOR
                         }
@@ -164,19 +167,22 @@ Item {
                         id: summaryColumn
                         width: parent.width
 
-                        Text {
+                        Label {
                             id: titleText
-                            font.pixelSize: UIConstants.FONT_SLARGE
-                            font.family: UIConstants.FONT_FAMILY
+                            platformStyle: LabelStyle {
+                                fontPixelSize: UIConstants.FONT_SLARGE
+                            }
                             width: parent.width
                             wrapMode: Text.WordWrap
                             text: model.title
                             color: 'darkblue'
                         }
 
-                        Text {
-                            font.pixelSize: UIConstants.FONT_XXSMALL
-                            font.family: "Nokia Pure Text Light"
+                        Label {
+                            platformStyle: LabelStyle {
+                                fontPixelSize: UIConstants.FONT_XXSMALL
+                                fontFamily: 'Nokia Pure Text Light'
+                            }
                             width: parent.width
                             elide: Text.ElideRight
                             text: model.mnm_url
@@ -219,22 +225,30 @@ Item {
                             source: 'qrc:/resources/icon-view-comments.png'
                         }
 
-                        Text {
+                        Label {
                             id: commentsText
-                            anchors.left: commentsIcon.right
-                            anchors.leftMargin: UIConstants.PADDING_LARGE
-                            font.pixelSize: UIConstants.FONT_XXSMALL
-                            font.family: "Nokia Pure Text Light"
+                            platformStyle: LabelStyle {
+                                fontPixelSize: UIConstants.FONT_XXSMALL
+                                fontFamily: 'Nokia Pure Text Light'
+                            }
+                            anchors {
+                                left: commentsIcon.right
+                                leftMargin: UIConstants.PADDING_LARGE
+                            }
                             text: qsTr('%Ln comment(s)', '', model.mnm_comments)
                             color: MNM.BORDER_COLOR
                         }
                     }
 
-                    Text {
-                        anchors.left: commentsArea.right
-                        anchors.leftMargin: UIConstants.PADDING_LARGE
-                        font.pixelSize: UIConstants.FONT_XXSMALL
-                        font.family: "Nokia Pure Text Light"
+                    Label {
+                        platformStyle: LabelStyle {
+                            fontPixelSize: UIConstants.FONT_XXSMALL
+                            fontFamily: 'Nokia Pure Text Light'
+                        }
+                        anchors {
+                            left: commentsArea.right
+                            leftMargin: UIConstants.PADDING_LARGE
+                        }
                         text: qsTr('By %1').arg(model.mnm_user)
                         color: UIConstants.COLOR_BUTTON_DISABLED_FOREGROUND
                     }
@@ -278,9 +292,10 @@ Item {
                 id: extendedContentColumn
                 width: parent.width - UIConstants.PADDING_MEDIUM * 2
 
-                Text {
-                    font.pixelSize: UIConstants.FONT_SMALL
-                    font.family: UIConstants.FONT_FAMILY
+                Label {
+                    platformStyle: LabelStyle {
+                        fontPixelSize: UIConstants.FONT_SMALL
+                    }
                     width: parent.width
                     wrapMode: Text.Wrap
                     text: model.description
@@ -290,18 +305,20 @@ Item {
                     width: parent.width
                     height: childrenRect.height
 
-                    Text {
+                    Label {
+                        platformStyle: LabelStyle {
+                            fontPixelSize: UIConstants.FONT_XSMALL
+                        }
                         anchors.left: parent.left
-                        font.pixelSize: UIConstants.FONT_XSMALL
-                        font.family: UIConstants.FONT_FAMILY
                         text: 'karma: ' + model.mnm_karma
                         color: MNM.BORDER_COLOR
                     }
 
-                    Text {
+                    Label {
+                        platformStyle: LabelStyle {
+                            fontPixelSize: UIConstants.FONT_XSMALL
+                        }
                         anchors.right: parent.right
-                        font.pixelSize: UIConstants.FONT_XSMALL
-                        font.family: UIConstants.FONT_FAMILY
                         text: Qt.formatDateTime(MNM.getDate(model.pubDate))
                         color: MNM.BORDER_COLOR
                     }
