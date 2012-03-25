@@ -34,6 +34,8 @@ public:
 public slots:
     void share(QString title, QString url, QString description);
 
+    void openStoreClient(const QString& url) const;
+
 private:
     QDeclarativeContext *m_declarativeContext;
 };
