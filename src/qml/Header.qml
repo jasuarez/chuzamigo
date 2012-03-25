@@ -24,37 +24,41 @@ import 'constants.js' as UIConstants
 import "MNM.js" as MNM
 
 Item {
-    height: headerRectangle.height
     width: parent.width
+    height: appWindow.inPortrait ?
+                UIConstants.HEADER_DEFAULT_HEIGHT_PORTRAIT :
+                UIConstants.HEADER_DEFAULT_HEIGHT_LANDSCAPE
 
     signal clicked()
 
-    Rectangle {
-        id: headerRectangle
-        width: parent.width
-        height: appWindow.inPortrait ?
-                    UIConstants.HEADER_DEFAULT_HEIGHT_PORTRAIT :
-                    UIConstants.HEADER_DEFAULT_HEIGHT_LANDSCAPE
-        color: MNM.BORDER_COLOR
+    BorderImage {
+        id: background
+        source: !headerMouseArea.pressed ?
+                    'image://theme/color17-meegotouch-view-header-fixed' :
+                    'image://theme/color17-meegotouch-view-header-fixed-pressed'
+        anchors.fill: parent
     }
 
     Image {
         id: headerIcon
         x: UIConstants.DEFAULT_MARGIN
-        anchors.verticalCenter: headerRectangle.verticalCenter
+        anchors.verticalCenter: parent.verticalCenter
         source: 'qrc:/resources/icon-meneamigo.png'
     }
 
-    Text {
+    Label {
         id: headerText
-        anchors.top: parent.top
-        anchors.topMargin: appWindow.inPortrait ?
-                               UIConstants.HEADER_DEFAULT_TOP_SPACING_PORTRAIT :
-                               UIConstants.HEADER_DEFAULT_TOP_SPACING_LANDSCAPE
-        anchors.left: headerIcon.right
-        anchors.leftMargin: UIConstants.DEFAULT_MARGIN
-        font.pixelSize: UIConstants.FONT_LARGE
-        font.family: UIConstants.FONT_FAMILY
+        anchors {
+            top: parent.top
+            topMargin: appWindow.inPortrait ?
+                           UIConstants.HEADER_DEFAULT_TOP_SPACING_PORTRAIT :
+                           UIConstants.HEADER_DEFAULT_TOP_SPACING_LANDSCAPE
+            left: headerIcon.right
+            leftMargin: UIConstants.DEFAULT_MARGIN
+        }
+        platformStyle: LabelStyle {
+            fontPixelSize: UIConstants.FONT_LARGE
+        }
         text: 'Meneamigo'
         color: 'white'
     }
