@@ -19,6 +19,7 @@
 
 import QtQuick 1.1
 import com.nokia.meego 1.0
+import com.nokia.extras 1.1
 import 'constants.js' as UIConstants
 
 Page {
@@ -44,19 +45,49 @@ Page {
         }
     }
 
-    Header { id: header }
+    Component.onCompleted: {
+        aboutOptions.get(0).title = qsTr('Recommend this app')
+        aboutOptions.get(1).title = qsTr('Tell us what you think')
+        aboutOptions.get(2).title = qsTr('Rate us in the Nokia Store')
+        aboutOptions.get(3).title = qsTr('Follow us on Twitter')
+        aboutOptions.get(4).title = qsTr('Check our other apps')
+    }
+
+    ListModel {
+        id: aboutOptions
+        ListElement {
+            title: 'Recomienda esta aplicación'
+            action: 'openExternally'
+            data: 'mailto:?subject=Download%20Meneamigo&body=Available%20at%20http://store.ovi.com/content/200577'
+        }
+        ListElement {
+            title: 'Cuéntanos tu opinión'
+            action: 'openExternally'
+            data: 'mailto:spena@igalia.com?subject=Meneamigo'
+        }
+        ListElement {
+            title: 'Valóranos en la Nokia Store'
+            action: 'openStore'
+            data: 'http://store.ovi.com/content/200577'
+        }
+        ListElement {
+            title: 'Síguenos en Twitter'
+            action: 'openExternally'
+            data: 'https://twitter.com/#!/spenap'
+        }
+        ListElement {
+            title: 'Otras de nuestras aplicaciones'
+            action: 'openStore'
+            data: 'http://store.ovi.com/publisher/Simon%20Pena/'
+        }
+    }
 
     Flickable {
         id: flick
         clip: true
+        anchors.fill: parent
         anchors {
-            top: header.bottom
-            left: parent.left
-            right: parent.right
-            bottom: parent.bottom
-        }
-        anchors {
-            topMargin: UIConstants.PADDING_MEDIUM
+            topMargin: UIConstants.DEFAULT_MARGIN
             leftMargin: UIConstants.DEFAULT_MARGIN
             rightMargin: UIConstants.DEFAULT_MARGIN
         }
@@ -70,70 +101,130 @@ Page {
             Image {
                 id: aboutImage
                 anchors.horizontalCenter: parent.horizontalCenter
-                source: 'qrc:/resources/meneamigo.svg'
+                source: 'qrc:/resources/icon-about-meneamigo.png'
             }
 
-            Text {
+            Label {
                 id: aboutVersion
-                text: 'Meneamigo 0.3'
-                anchors.horizontalCenter: parent.horizontalCenter
-                font.family: UIConstants.FONT_FAMILY
-                font.pixelSize: UIConstants.FONT_XLARGE
-                color: !theme.inverted ?
-                           UIConstants.COLOR_FOREGROUND :
-                           UIConstants.COLOR_INVERTED_FOREGROUND
+                text: 'Meneamigo 0.4.0'
+                width: parent.width
+                horizontalAlignment: Text.AlignHCenter
+                platformStyle: LabelStyle {
+                    fontPixelSize: UIConstants.FONT_XLARGE
+                }
+                color: UIConstants.COLOR_FOREGROUND
             }
 
-            Text {
+            Rectangle {
+                width: parent.width
+                height: repeater.model.count * UIConstants.LIST_ITEM_HEIGHT_SMALL
+                color: 'white'
+
+                Column {
+                    id: subcolumn
+                    anchors.fill: parent
+                    Repeater {
+                        id: repeater
+                        model: aboutOptions
+                        Item {
+                            height: UIConstants.LIST_ITEM_HEIGHT_SMALL
+                            width: parent.width
+
+                            BorderImage {
+                                anchors.fill: parent
+                                visible: mouseArea.pressed
+                                source: 'image://theme/meegotouch-list-fullwidth-background-pressed-vertical-center'
+                            }
+
+                            Label {
+                                anchors {
+                                    left: parent.left
+                                    leftMargin: UIConstants.DEFAULT_MARGIN
+                                    verticalCenter: parent.verticalCenter
+                                }
+                                platformStyle: LabelStyle {
+                                    fontPixelSize: UIConstants.FONT_SLARGE
+                                }
+                                text: model.title
+                            }
+
+                            MoreIndicator {
+                                anchors {
+                                    right: parent.right
+                                    rightMargin: UIConstants.DEFAULT_MARGIN
+                                    verticalCenter: parent.verticalCenter
+                                }
+                            }
+
+                            Rectangle {
+                                anchors.bottom: parent.bottom
+                                width: parent.width
+                                height: 1
+                                color: UIConstants.COLOR_BUTTON_DISABLED_FOREGROUND
+                                visible: index !== repeater.model.count - 1
+                            }
+
+                            MouseArea {
+                                id: mouseArea
+                                anchors.fill: parent
+                                onClicked: {
+                                    if (model.action === 'openStore') {
+                                        controller.openStoreClient(model.data)
+                                    } else if (model.action === 'openExternally') {
+                                        Qt.openUrlExternally(model.data)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                BorderImage {
+                    id: border
+                    source: 'qrc:/resources/round-corners-shadow.png'
+                    anchors.fill: parent
+                    border { left: 18; top: 18; right: 18; bottom: 18 }
+                }
+            }
+
+            Label {
                 id: aboutCopyright
-                text: 'Copyright © 2011 Simon Pena'
-                anchors.horizontalCenter: parent.horizontalCenter
-                font.family: UIConstants.FONT_FAMILY
-                font.pixelSize: UIConstants.FONT_XLARGE
-                color: !theme.inverted ?
-                           UIConstants.COLOR_FOREGROUND :
-                           UIConstants.COLOR_INVERTED_FOREGROUND
-            }
-
-            Text {
-                id: aboutContact
-                anchors.horizontalCenter: parent.horizontalCenter
-                font.family: UIConstants.FONT_FAMILY
-                font.pixelSize: UIConstants.FONT_LSMALL
-                color: !theme.inverted ?
-                           UIConstants.COLOR_FOREGROUND :
-                           UIConstants.COLOR_INVERTED_FOREGROUND
-                text: '<a href="mailto:spena@igalia.com">spena@igalia.com</a> | ' +
-                      '<a href="http://www.simonpena.com/?utm_source=harmattan&utm_medium=apps&utm_campaign=meneamigo">simonpena.com</a>'
-                onLinkActivated: Qt.openUrlExternally(link)
-            }
-
-            Text {
-                id: aboutMeneameDisclaimer
-                font.family: UIConstants.FONT_FAMILY
-                font.pixelSize: UIConstants.FONT_LSMALL
-                color: !theme.inverted ?
-                           UIConstants.COLOR_FOREGROUND :
-                           UIConstants.COLOR_INVERTED_FOREGROUND
+                text: 'Copyright © 2011 - 2012 Simon Pena'
                 width: parent.width
-                wrapMode: Text.WordWrap
-                text: qsTr('This application uses <a href="http://meneame.net/">Meneame</a> but it is not affiliated nor certified by them.')
+                horizontalAlignment: Text.AlignHCenter
+                platformStyle: LabelStyle {
+                    fontPixelSize: UIConstants.FONT_LSMALL
+                    fontFamily: UIConstants.FONT_FAMILY_LIGHT
+                }
+                color: UIConstants.COLOR_FOREGROUND
+            }
+
+            Label {
+                id: aboutDisclaimer
+                text: qsTr('This application uses <a href="http://meneame.net/">Meneame</a> ' +
+                           'but it is not affiliated nor certified by them.')
+                width: parent.width
+                horizontalAlignment: Text.AlignJustify
+                platformStyle: LabelStyle {
+                    fontPixelSize: UIConstants.FONT_LSMALL
+                    fontFamily: UIConstants.FONT_FAMILY_LIGHT
+                }
+                color: UIConstants.COLOR_FOREGROUND
                 onLinkActivated: Qt.openUrlExternally(link)
             }
 
-            Text {
-                id: aboutLicense
-                font.pixelSize: UIConstants.FONT_LSMALL
-                color: !theme.inverted ?
-                           UIConstants.COLOR_FOREGROUND :
-                           UIConstants.COLOR_INVERTED_FOREGROUND
-                width: parent.width
-                wrapMode: Text.WordWrap
-                font.family: "Nokia Pure Text Light"
-                text: license
-                onLinkActivated: Qt.openUrlExternally(link)
+            Button {
+                anchors.horizontalCenter: parent.horizontalCenter
+                text: qsTr('Licence')
+                onClicked: licenseDialog.open()
             }
         }
+    }
+
+    QueryDialog {
+        id: licenseDialog
+        message: license
+        acceptButtonText: 'OK'
     }
 
     ScrollDecorator {
