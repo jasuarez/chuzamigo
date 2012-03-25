@@ -80,8 +80,7 @@ unix {
     icon64.files += ../data/$${TARGET}.png
 
     splash.path = $$DATADIR/$${TARGET}/
-    splash.files += ../data/mnm-splash-landscape.jpg
-    splash.files += ../data/mnm-splash-portrait.jpg
+    splash.files += ../data/splash-portrait-meneamigo.png
 }
 
 # Rule for regenerating .qm files for translations (missing in qmake
