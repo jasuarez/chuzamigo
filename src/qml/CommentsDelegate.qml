@@ -31,65 +31,126 @@ Item {
         leftMargin: UIConstants.DEFAULT_MARGIN
         rightMargin: UIConstants.DEFAULT_MARGIN
     }
-    height: contentColumn.height + UIConstants.PADDING_LARGE * 2
+    height: expanded ?
+                actualSize :
+                Math.min(actualSize, collapsedSize)
+
+    Behavior on height {
+        NumberAnimation { duration: 200 }
+    }
+
+    property int actualSize: contentColumn.height + UIConstants.PADDING_LARGE * 2
+    property int collapsedSize: 160
+    property bool expanded: false
 
     Rectangle {
         anchors.fill: parent
         anchors.margins: UIConstants.PADDING_SMALL
         color: MNM.BUBBLE_COLOR
         radius: 10
-        border.width: 2
-        border.color: MNM.BORDER_COLOR
     }
 
-    Column {
-        x: UIConstants.PADDING_LARGE
-        y: UIConstants.PADDING_LARGE
-        id: contentColumn
-        width: parent.width - UIConstants.PADDING_LARGE * 2
+    Item {
+        id: contentWrapper
+        clip: true
+        width: parent.width
+        height: parent.height - UIConstants.DEFAULT_MARGIN
 
-        Text {
-            y: UIConstants.PADDING_MEDIUM
-            font.pixelSize: UIConstants.FONT_SMALL
-            font.family: UIConstants.FONT_FAMILY
-            width: parent.width
-            wrapMode: Text.Wrap
-            text: MNM.cleanUpComments(model.description)
-            onLinkActivated: {
-                // Internal links start with '/'
-                if (MNM.startsWith(link, '/')) {
-                    var commentNumber = parseInt(link.substr(1), 10)
-                    // Make sure the internal link is to another comment
-                    if (commentNumber) {
-                        // Meneame comments start from #1 (since #0 is the entry itself)
-                        var referredComment = commentsList.model.count - commentNumber
-                        commentsList.positionViewAtIndex(referredComment, ListView.Beginning)
+        Column {
+            x: UIConstants.PADDING_LARGE
+            y: UIConstants.PADDING_LARGE
+            id: contentColumn
+            width: parent.width - UIConstants.PADDING_LARGE * 2
+
+            Item {
+                width: parent.width
+                height: childrenRect.height
+
+                Label {
+                    anchors.left: parent.left
+                    platformStyle: LabelStyle {
+                        fontPixelSize: UIConstants.FONT_XSMALL
                     }
-                } else {
-                    Qt.openUrlExternally(link)
+                    color: MNM.BORDER_COLOR
+                    text: qsTr('#%1 | karma: %2 | By %3').arg(model.mnm_order).arg(model.mnm_karma).arg(model.mnm_user)
+                }
+
+                Label {
+                    anchors.right: parent.right
+                    platformStyle: LabelStyle {
+                        fontPixelSize: UIConstants.FONT_XSMALL
+                    }
+                    text: Qt.formatDateTime(MNM.getDate(model.pubDate))
+                    color: MNM.BORDER_COLOR
+                }
+            }
+
+            Label {
+                y: UIConstants.PADDING_MEDIUM
+                platformStyle: LabelStyle {
+                    fontPixelSize: UIConstants.FONT_SMALL
+                }
+                width: parent.width
+                wrapMode: Text.Wrap
+                text: MNM.cleanUpComments(model.description)
+                onLinkActivated: {
+                    // Internal links start with '/'
+                    if (MNM.startsWith(link, '/')) {
+                        var commentNumber = parseInt(link.substr(1), 10)
+                        // Make sure the internal link is to another comment
+                        if (commentNumber) {
+                            // Meneame comments start from #1 (since #0 is the entry itself)
+                            var referredComment = commentNumber - 1
+                            commentsList.positionViewAtIndex(referredComment, ListView.Beginning)
+                        }
+                    } else {
+                        Qt.openUrlExternally(link)
+                    }
                 }
             }
         }
+    }
 
-        Item {
-            width: parent.width
-            height: childrenRect.height
+    Item {
+        height: UIConstants.FIELD_DEFAULT_HEIGHT
+        width: parent.width
+        visible: actualSize > collapsedSize
+        anchors {
+            horizontalCenter: parent.horizontalCenter
+            bottom: parent.bottom
+            bottomMargin: UIConstants.PADDING_SMALL
+        }
 
-            Text {
-                anchors.left: parent.left
-                font.pixelSize: UIConstants.FONT_XSMALL
-                font.family: UIConstants.FONT_FAMILY
-                color: MNM.BORDER_COLOR
-                text: qsTr('#%1 | karma: %2 | By %3').arg(model.mnm_order).arg(model.mnm_karma).arg(model.mnm_user)
-            }
+        Rectangle {
+            width: parent.width - UIConstants.DEFAULT_MARGIN
+            height: moreIndicator.height
+            anchors.bottom: parent.bottom
+            color: MNM.BUBBLE_COLOR
+            opacity: 0.95
+        }
 
-            Text {
-                anchors.right: parent.right
-                font.pixelSize: UIConstants.FONT_XSMALL
-                font.family: UIConstants.FONT_FAMILY
-                text: Qt.formatDateTime(MNM.getDate(model.pubDate))
-                color: MNM.BORDER_COLOR
+        MouseArea {
+            anchors.fill: parent
+            onClicked: expanded = !expanded
+        }
+
+        MoreIndicator {
+            id: moreIndicator
+            anchors.centerIn: parent
+            rotation: expanded ? -90 : 90
+
+            Behavior on rotation {
+                NumberAnimation { duration: 200 }
             }
         }
+    }
+
+    Rectangle {
+        anchors.fill: parent
+        anchors.margins: UIConstants.PADDING_SMALL
+        color: 'transparent'
+        radius: 10
+        border.width: 2
+        border.color: MNM.BORDER_COLOR
     }
 }
