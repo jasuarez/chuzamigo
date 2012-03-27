@@ -208,36 +208,29 @@ Item {
                         source: 'image://theme/meegotouch-list-background-pressed-vertical-center'
                     }
 
-                    Image {
-                        id: detailsImage
-                        source: 'qrc:/resources/icon-view-details.png'
+                    MoreIndicator {
+                        id: moreIndicator
+                        anchors.left: parent.left
+                        rotation: showDetails? -90 : 90
+
+                        Behavior on rotation {
+                            NumberAnimation { duration: 200 }
+                        }
                     }
 
-                    Item {
-                        id: commentsArea
-                        anchors.left: detailsImage.right
-                        anchors.leftMargin: UIConstants.PADDING_LARGE
-                        width: childrenRect.width
-                        height: childrenRect.height
-
-                        Image {
-                            id: commentsIcon
-                            source: 'qrc:/resources/icon-view-comments.png'
+                    Label {
+                        id: commentsText
+                        platformStyle: LabelStyle {
+                            fontPixelSize: UIConstants.FONT_XXSMALL
+                            fontFamily: 'Nokia Pure Text Light'
                         }
-
-                        Label {
-                            id: commentsText
-                            platformStyle: LabelStyle {
-                                fontPixelSize: UIConstants.FONT_XXSMALL
-                                fontFamily: 'Nokia Pure Text Light'
-                            }
-                            anchors {
-                                left: commentsIcon.right
-                                leftMargin: UIConstants.PADDING_LARGE
-                            }
-                            text: qsTr('%Ln comment(s)', '', model.mnm_comments)
-                            color: MNM.BORDER_COLOR
+                        anchors {
+                            left: moreIndicator.right
+                            leftMargin: UIConstants.PADDING_LARGE
+                            verticalCenter: moreIndicator.verticalCenter
                         }
+                        text: qsTr('%Ln comment(s)', '', model.mnm_comments)
+                        color: MNM.BORDER_COLOR
                     }
 
                     Label {
@@ -246,8 +239,9 @@ Item {
                             fontFamily: 'Nokia Pure Text Light'
                         }
                         anchors {
-                            left: commentsArea.right
+                            left: commentsText.right
                             leftMargin: UIConstants.PADDING_LARGE
+                            verticalCenter: moreIndicator.verticalCenter
                         }
                         text: qsTr('By %1').arg(model.mnm_user)
                         color: UIConstants.COLOR_BUTTON_DISABLED_FOREGROUND
