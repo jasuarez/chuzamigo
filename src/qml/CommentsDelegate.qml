@@ -31,7 +31,7 @@ Item {
         leftMargin: UIConstants.DEFAULT_MARGIN
         rightMargin: UIConstants.DEFAULT_MARGIN
     }
-    height: expanded ?
+    height: expanded || !useExpander ?
                 actualSize :
                 Math.min(actualSize, collapsedSize)
 
@@ -39,6 +39,7 @@ Item {
         NumberAnimation { duration: 200 }
     }
 
+    property bool useExpander: false
     property int actualSize: contentColumn.height + UIConstants.PADDING_LARGE * 2
     property int collapsedSize: 160
     property bool expanded: false
@@ -114,7 +115,7 @@ Item {
     Item {
         height: UIConstants.FIELD_DEFAULT_HEIGHT
         width: parent.width
-        visible: actualSize > collapsedSize
+        visible: (actualSize > collapsedSize) && useExpander
         anchors {
             horizontalCenter: parent.horizontalCenter
             bottom: parent.bottom
