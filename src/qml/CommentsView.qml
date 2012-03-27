@@ -241,12 +241,19 @@ Page {
             header: RefreshHeader {
                 id: refreshHeader
                 showHeader: showListHeader
-                loading: commentsList.model.status == XmlListModel.Loading
+                loading: commentsList.model.status === XmlListModel.Loading
                 yPosition: contentYPos
 
                 onClicked: {
                     entryComments.reload()
                 }
+            }
+            footer: RefreshHeader {
+                id: refreshFooter
+                showHeader: true
+                loading: commentsList.model.status === XmlListModel.Loading
+                yPosition: 1
+                onClicked: entryComments.reload()
             }
 
             onFlickStarted: {
