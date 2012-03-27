@@ -158,7 +158,7 @@ Item {
                     BorderImage {
                         anchors.fill: parent
                         visible: summaryItemMouseArea.pressed
-                        source: 'image://theme/meegotouch-list-background-pressed-vertical-center'
+                        source: 'image://theme/meegotouch-list-fullwidth-background-pressed-vertical-center'
                     }
 
                     Column {
@@ -203,7 +203,7 @@ Item {
                     BorderImage {
                         anchors.fill: parent
                         visible: detailsItemMouseArea.pressed
-                        source: 'image://theme/meegotouch-list-background-pressed-vertical-center'
+                        source: 'image://theme/meegotouch-list-fullwidth-background-pressed-vertical-center'
                     }
 
                     MoreIndicator {
