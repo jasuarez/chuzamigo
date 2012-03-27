@@ -147,7 +147,7 @@ Item {
 
             Column {
                 id: entryColumn
-                width: parent.width - votesUpperArea.width
+                width: parent.width - votesColumn.width - UIConstants.PADDING_LARGE
                 spacing: UIConstants.PADDING_SMALL
 
                 Item {
@@ -185,6 +185,39 @@ Item {
                             elide: Text.ElideRight
                             text: model.mnm_url
                         }
+
+                        Row {
+                            height: childrenRect.height
+                            width: parent.width
+                            spacing: UIConstants.PADDING_LARGE
+
+                            Label {
+                                platformStyle: LabelStyle {
+                                    fontPixelSize: UIConstants.FONT_XXSMALL
+                                    fontFamily: 'Nokia Pure Text Light'
+                                }
+                                text: qsTr('%Ln comment(s)', '', model.mnm_comments)
+                                color: MNM.BORDER_COLOR
+                            }
+
+                            Label {
+                                platformStyle: LabelStyle {
+                                    fontPixelSize: UIConstants.FONT_XXSMALL
+                                    fontFamily: 'Nokia Pure Text Light'
+                                }
+                                text: 'karma: ' + model.mnm_karma
+                                color: MNM.BORDER_COLOR
+                            }
+
+                            Label {
+                                platformStyle: LabelStyle {
+                                    fontPixelSize: UIConstants.FONT_XXSMALL
+                                    fontFamily: 'Nokia Pure Text Light'
+                                }
+                                text: Qt.formatDateTime(MNM.getDate(model.pubDate))
+                                color: MNM.BORDER_COLOR
+                            }
+                        }
                     }
 
                     MouseArea {
@@ -194,128 +227,7 @@ Item {
                         onPressAndHold: newsDelegate.pressAndHold()
                     }
                 }
-
-                Item {
-                    id: detailsItem
-                    height: childrenRect.height
-                    width: childrenRect.width
-
-                    BorderImage {
-                        anchors.fill: parent
-                        visible: detailsItemMouseArea.pressed
-                        source: 'image://theme/meegotouch-list-fullwidth-background-pressed-vertical-center'
-                    }
-
-                    MoreIndicator {
-                        id: moreIndicator
-                        anchors.left: parent.left
-                        rotation: showDetails? -90 : 90
-
-                        Behavior on rotation {
-                            NumberAnimation { duration: 200 }
-                        }
-                    }
-
-                    Label {
-                        id: commentsText
-                        platformStyle: LabelStyle {
-                            fontPixelSize: UIConstants.FONT_XXSMALL
-                            fontFamily: 'Nokia Pure Text Light'
-                        }
-                        anchors {
-                            left: moreIndicator.right
-                            leftMargin: UIConstants.PADDING_LARGE
-                            verticalCenter: moreIndicator.verticalCenter
-                        }
-                        text: qsTr('%Ln comment(s)', '', model.mnm_comments)
-                        color: MNM.BORDER_COLOR
-                    }
-
-                    Label {
-                        platformStyle: LabelStyle {
-                            fontPixelSize: UIConstants.FONT_XXSMALL
-                            fontFamily: 'Nokia Pure Text Light'
-                        }
-                        anchors {
-                            left: commentsText.right
-                            leftMargin: UIConstants.PADDING_LARGE
-                            verticalCenter: moreIndicator.verticalCenter
-                        }
-                        text: qsTr('By %1').arg(model.mnm_user)
-                        color: UIConstants.COLOR_BUTTON_DISABLED_FOREGROUND
-                    }
-
-                    MouseArea {
-                        id: detailsItemMouseArea
-                        anchors.fill: parent
-                        onClicked: showDetails = !showDetails
-                    }
-                }
             }
-        }
-
-        Item {
-            id: extendedContent
-            height: showDetails ?
-                        extendedContentColumn.height + UIConstants.PADDING_LARGE * 2 :
-                        0
-            width: parent.width
-            opacity: showDetails ? 1 : 0
-
-            Behavior on height {
-                NumberAnimation { duration: 200 }
-            }
-
-            Behavior on opacity {
-                NumberAnimation { duration: 200 }
-            }
-
-            Rectangle {
-                anchors.fill: parent
-                color: MNM.BUBBLE_COLOR
-                radius: 10
-                border.width: 2
-                border.color: MNM.BORDER_COLOR
-            }
-
-            Column {
-                x: UIConstants.PADDING_MEDIUM
-                y: UIConstants.PADDING_LARGE
-                id: extendedContentColumn
-                width: parent.width - UIConstants.PADDING_MEDIUM * 2
-
-                Label {
-                    platformStyle: LabelStyle {
-                        fontPixelSize: UIConstants.FONT_SMALL
-                    }
-                    width: parent.width
-                    wrapMode: Text.Wrap
-                    text: model.description
-                }
-
-                Item {
-                    width: parent.width
-                    height: childrenRect.height
-
-                    Label {
-                        platformStyle: LabelStyle {
-                            fontPixelSize: UIConstants.FONT_XSMALL
-                        }
-                        anchors.left: parent.left
-                        text: 'karma: ' + model.mnm_karma
-                        color: MNM.BORDER_COLOR
-                    }
-
-                    Label {
-                        platformStyle: LabelStyle {
-                            fontPixelSize: UIConstants.FONT_XSMALL
-                        }
-                        anchors.right: parent.right
-                        text: Qt.formatDateTime(MNM.getDate(model.pubDate))
-                        color: MNM.BORDER_COLOR
-                    }
-                }
-            }
-        }
+        }        
     }
 }
