@@ -116,11 +116,6 @@ Page {
             }
         }
 
-        MouseArea {
-            anchors.fill: currentEntrySummary
-            onClicked: showDetails = !showDetails
-        }
-
         Item {
             id: extendedContent
             height: showDetails ?
@@ -130,9 +125,7 @@ Page {
                 top: currentEntrySummary.bottom
                 left: parent.left
                 right: parent.right
-            }
-            anchors {
-                topMargin: height > 0 ? UIConstants.PADDING_LARGE : 0
+                topMargin: UIConstants.PADDING_LARGE
                 leftMargin: UIConstants.DEFAULT_MARGIN
                 rightMargin: UIConstants.DEFAULT_MARGIN
             }
@@ -155,9 +148,9 @@ Page {
             }
 
             Column {
+                id: extendedContentColumn
                 x: UIConstants.PADDING_MEDIUM
                 y: UIConstants.PADDING_LARGE
-                id: extendedContentColumn
                 width: parent.width - UIConstants.PADDING_MEDIUM * 2
 
                 Text {
@@ -191,6 +184,32 @@ Page {
             }
         }
 
+        Item {
+            id: expander
+            height: UIConstants.FIELD_DEFAULT_HEIGHT
+            width: parent.width
+            anchors {
+                horizontalCenter: parent.horizontalCenter
+                top: extendedContent.bottom
+                topMargin: UIConstants.PADDING_SMALL
+            }
+
+            MouseArea {
+                anchors.fill: parent
+                onClicked: showDetails = !showDetails
+            }
+
+            MoreIndicator {
+                id: moreIndicator
+                anchors.centerIn: parent
+                rotation: showDetails ? -90 : 90
+
+                Behavior on rotation {
+                    NumberAnimation { duration: 200 }
+                }
+            }
+        }
+
         CommentsModel {
             id: entryComments
             source: MNM.RSS_COMMENTS + currentEntry.mnm_link_id
@@ -220,7 +239,7 @@ Page {
 
         Divider {
             id: divider
-            anchors.top: extendedContent.bottom
+            anchors.top: expander.bottom
             text: (commentsList.model.status !== XmlListModel.Ready ?
                        qsTr('%Ln comment(s)', '', currentEntry.mnm_comments) :
                        qsTr('%Ln comment(s)', '', commentsList.model.count))

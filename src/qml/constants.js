@@ -36,7 +36,7 @@ var FONT_SMALL      = 20
 var FONT_XSMALL     = 18
 var FONT_XXSMALL    = 16
 
-var FIELD_DEFAULT_HEIGHT = 52
+var FIELD_DEFAULT_HEIGHT = 26
 
 var COLOR_FOREGROUND                    = '#191919'
 var COLOR_INVERTED_FOREGROUND           = '#FFFFFF'
