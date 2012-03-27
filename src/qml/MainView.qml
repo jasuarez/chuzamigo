@@ -83,6 +83,21 @@ Page {
         AboutView { }
     }
 
+    Component {
+        id: commentsView
+        CommentsView { }
+    }
+
+    ContextMenu {
+        id: contextMenu
+        MenuLayout {
+            MenuItem {
+                text: qsTr('Open original news')
+                onClicked: Qt.openUrlExternally(list.model.get(list.currentIndex).mnm_url)
+            }
+        }
+    }
+
     Menu {
         id: mainMenu
         MenuLayout {
@@ -172,6 +187,16 @@ Page {
                     tempMap[linkId] = MNM.VOTE_WAITING
                     votesMap = tempMap
                     asyncWorker.sendMessage({ method: MNM.METHOD_VOTE, url: voteUrl, id: linkId })
+                }
+            }
+            onClicked: appWindow.pageStack.push(commentsView,
+                                              { currentEntry: model })
+            onPressAndHold: {
+                list.currentIndex = model.index
+                if (contextMenu.status === DialogStatus.Closed) {
+                    contextMenu.open()
+                } else {
+                    contextMenu.close()
                 }
             }
         }

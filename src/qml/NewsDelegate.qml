@@ -32,15 +32,13 @@ Item {
         rightMargin: UIConstants.DEFAULT_MARGIN
     }
     height: content.height + 2 * UIConstants.PADDING_MEDIUM
+    clip: true
 
     property bool showDetails: false
     property int votedStatus: MNM.VOTE_AVAILABLE
     signal vote(string linkId)
-
-    Component {
-        id: commentsView
-        CommentsView { }
-    }
+    signal clicked()
+    signal pressAndHold()
 
     Column {
         id: content
@@ -192,8 +190,8 @@ Item {
                     MouseArea {
                         id: summaryItemMouseArea
                         anchors.fill: summaryColumn
-                        onClicked: appWindow.pageStack.push(commentsView,
-                                                           { currentEntry: model })
+                        onClicked: newsDelegate.clicked()
+                        onPressAndHold: newsDelegate.pressAndHold()
                     }
                 }
 
