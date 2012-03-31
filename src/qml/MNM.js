@@ -51,7 +51,7 @@ function getDate(text) {
 }
 
 function cleanUpComments(text) {
-    return text.replace(/&#187;&nbsp;autor.*/g, '').replace(/http:\/\/chuza.gl\/img\/smileys\//g, '\/img\/smileys\/')
+    return text.replace(/&#187;&nbsp;autor.*/g, '').replace(/http:\/\/mnmstatic.net\/img\/smileys\//g, '\/img\/smileys\/')
 }
 
 function startsWith(text, str) {
