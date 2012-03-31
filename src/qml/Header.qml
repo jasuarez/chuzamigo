@@ -25,9 +25,13 @@ import "MNM.js" as MNM
 
 Item {
     width: parent.width
-    height: appWindow.inPortrait ?
-                UIConstants.HEADER_DEFAULT_HEIGHT_PORTRAIT :
-                UIConstants.HEADER_DEFAULT_HEIGHT_LANDSCAPE
+    height: halfSize ? headerSize / 2 : headerSize
+
+    property int headerSize: appWindow.inPortrait ?
+                                 UIConstants.HEADER_DEFAULT_HEIGHT_PORTRAIT :
+                                 UIConstants.HEADER_DEFAULT_HEIGHT_LANDSCAPE
+
+    property bool halfSize: false
 
     signal clicked()
 
@@ -44,20 +48,18 @@ Item {
         x: UIConstants.DEFAULT_MARGIN
         anchors.verticalCenter: parent.verticalCenter
         source: 'qrc:/resources/icon-meneamigo.png'
+        visible: !halfSize
     }
 
     Label {
         id: headerText
         anchors {
-            top: parent.top
-            topMargin: appWindow.inPortrait ?
-                           UIConstants.HEADER_DEFAULT_TOP_SPACING_PORTRAIT :
-                           UIConstants.HEADER_DEFAULT_TOP_SPACING_LANDSCAPE
-            left: headerIcon.right
+            verticalCenter: parent.verticalCenter
+            left: halfSize ? parent.left : headerIcon.right
             leftMargin: UIConstants.DEFAULT_MARGIN
         }
         platformStyle: LabelStyle {
-            fontPixelSize: UIConstants.FONT_LARGE
+            fontPixelSize: halfSize ? UIConstants.FONT_LSMALL : UIConstants.FONT_LARGE
         }
         text: 'Meneamigo'
         color: 'white'
