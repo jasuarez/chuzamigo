@@ -1,3 +1,10 @@
+meneamigo (0.4.1) unstable; urgency=low
+
+  * Optified package
+  * Used proper graphics
+
+ -- Simon Pena <spena@igalia.com>  Sat, 31 Mar 2012 20:54:02 +0300
+
 meneamigo (0.4.0) unstable; urgency=low
 
   * Keep a local copy of the smileys to reduce network access
