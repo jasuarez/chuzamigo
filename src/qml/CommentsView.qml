@@ -64,6 +64,7 @@ Page {
 
     Header {
         id: header
+        halfSize: true
         onClicked: commentsList.positionViewAtBeginning()
     }
 
@@ -99,7 +100,7 @@ Page {
             }
 
             Text {
-                font.pixelSize: UIConstants.FONT_SLARGE
+                font.pixelSize: UIConstants.FONT_DEFAULT
                 font.family: UIConstants.FONT_FAMILY
                 width: parent.width
                 wrapMode: Text.WordWrap
@@ -154,7 +155,7 @@ Page {
                 width: parent.width - UIConstants.PADDING_MEDIUM * 2
 
                 Text {
-                    font.pixelSize: UIConstants.FONT_SMALL
+                    font.pixelSize: UIConstants.FONT_XSMALL
                     font.family: UIConstants.FONT_FAMILY
                     width: parent.width
                     wrapMode: Text.WordWrap
@@ -167,7 +168,7 @@ Page {
 
                     Text {
                         anchors.left: parent.left
-                        font.pixelSize: UIConstants.FONT_XSMALL
+                        font.pixelSize: UIConstants.FONT_XXSMALL
                         font.family: UIConstants.FONT_FAMILY
                         text: qsTr('karma: %1 | By %2').arg(currentEntry.mnm_karma).arg(currentEntry.mnm_user)
                         color: MNM.BORDER_COLOR
@@ -175,7 +176,7 @@ Page {
 
                     Text {
                         anchors.right: parent.right
-                        font.pixelSize: UIConstants.FONT_XSMALL
+                        font.pixelSize: UIConstants.FONT_XXSMALL
                         font.family: UIConstants.FONT_FAMILY
                         text: Qt.formatDateTime(MNM.getDate(currentEntry.pubDate))
                         color: MNM.BORDER_COLOR
