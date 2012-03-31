@@ -1,3 +1,13 @@
+meneamigo (0.4.0) unstable; urgency=low
+
+  * Keep a local copy of the smileys to reduce network access
+  * Updated AboutView
+  * Sort comments by date in the CommentsView
+  * Update the CommentsView so more comments fit
+  * Allow jumping to first / last comment in the CommentsView
+
+ -- Simon Pena <spena@igalia.com>  Sat, 31 Mar 2012 13:42:13 +0300
+
 meneamigo (0.3) unstable; urgency=low
 
   * Added L10n support (by Adrian Perez)
