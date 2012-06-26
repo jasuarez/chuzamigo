@@ -106,6 +106,18 @@ Page {
                 wrapMode: Text.WordWrap
                 text: currentEntry.title
                 color: 'darkblue'
+
+                MouseArea {
+                    id: titleMouseArea
+                    anchors.fill: parent
+                    onClicked: Qt.openUrlExternally(currentEntry.mnm_url)
+
+                    BorderImage {
+                        visible: titleMouseArea.pressed
+                        anchors.fill: parent
+                        source: 'image://theme/meegotouch-list-fullwidth-background-pressed-vertical-center'
+                    }
+                }
             }
 
             Text {
