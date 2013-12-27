@@ -39,8 +39,8 @@ Item {
     BorderImage {
         id: background
         source: !headerMouseArea.pressed ?
-                    'image://theme/color17-meegotouch-view-header-fixed' :
-                    'image://theme/color17-meegotouch-view-header-fixed-pressed'
+                    'image://theme/color4-meegotouch-view-header-fixed' :
+                    'image://theme/color4-meegotouch-view-header-fixed-pressed'
         anchors.fill: parent
     }
 

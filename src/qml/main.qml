@@ -31,7 +31,7 @@ PageStackWindow {
         if (theme.colorScheme) {
             // TODO: Set a suitable color scheme (available in Qt Components master)
             // http://fiferboy.blogspot.com/2011/08/qml-colour-themes-in-harmattan.html
-            theme.colorScheme = 17
+            theme.colorScheme = 4
         }
     }
 

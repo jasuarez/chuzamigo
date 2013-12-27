@@ -36,8 +36,8 @@ var VOTE_ERROR = 3
 
 // COLORS
 
-var BORDER_COLOR = 'darkorange'
-var BUBBLE_COLOR = '#f8dcc0'
+var BORDER_COLOR = 'darkgreen'
+var BUBBLE_COLOR = '#d7f8c6'
 
 function sanitizeText(text) {
     // "Save" existing <br /> into &lt;br /&gt;, remove all tags
