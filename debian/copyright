@@ -1,15 +1,18 @@
 This work was packaged for Debian by:
 
+    Juan A. Suarez Romero <jasuarez@igalia.com> on Fri, 27 Dec 2013 01:44:32 +0100
     Simon Pena <spena@igalia.com> on Sun, 18 Sep 2011 16:17:42 +0200
 
-It was downloaded from https://gitorious.org/spena-playground/meneamigo
+It was downloaded from https://gitorious.org/spena-playground/chuzamigo
 
 Upstream Author:
 
+    Juan A. Suarez Romero <jasuarez@igalia.com>
     Simon Pena <spena@igalia.com>
 
 Copyright:
 
+    2013 Juan A. Suarez Romero
     2011 Simon Pena
 
 License:

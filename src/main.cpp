@@ -1,5 +1,6 @@
 /**************************************************************************
- *   Meneamigo
+ *   Chuzamigo
+ *   Copyright (C) 2013 Juan A. Suarez Romero <jasuarez@igalia.com>
  *   Copyright (C) 2011 - 2012 Simon Pena <spena@igalia.com>
  *
  *   This program is free software: you can redistribute it and/or modify
@@ -45,7 +46,7 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
     QString locale(QLocale::system().name());
     QTranslator translator;
 
-    if (translator.load("l10n/meneamigo." + locale, ":/")) {
+    if (translator.load("l10n/chuzamigo." + locale, ":/")) {
         app->installTranslator(&translator);
     }
 

@@ -1,5 +1,6 @@
 /**************************************************************************
- *   Meneamigo
+ *   Chuzamigo
+ *   Copyright (C) 2013 Juan A. Suarez Romero <spena@igalia.com>
  *   Copyright (C) 2011 - 2012 Simon Pena <spena@igalia.com>
  *
  *   This program is free software: you can redistribute it and/or modify
@@ -255,7 +256,7 @@ Page {
             font.pixelSize: UIConstants.FONT_XLARGE
             font.family: UIConstants.FONT_FAMILY
             color: UIConstants.COLOR_BUTTON_DISABLED_FOREGROUND
-            text: qsTr('Error while accessing Meneame')
+            text: qsTr('Error while accessing Chuza')
         }
 
         Button {

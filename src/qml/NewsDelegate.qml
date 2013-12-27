@@ -1,5 +1,6 @@
 /**************************************************************************
- *   Meneamigo
+ *   Chuzamigo
+ *   Copyright (C) 2013 Juan A. Suarez Romero <jasuarez@igalia.com>
  *   Copyright (C) 2011 - 2012 Simon Pena <spena@igalia.com>
  *
  *   This program is free software: you can redistribute it and/or modify

@@ -1,5 +1,6 @@
 /**************************************************************************
- *   Meneamigo
+ *   Chuzamigo
+ *   Copyright (C) 2013 Juan A. Suarez Romero <jasuarez@igalia.com>
  *   Copyright (C) 2011 - 2012 Simon Pena <spena@igalia.com>
  *
  *   This program is free software: you can redistribute it and/or modify
@@ -47,7 +48,7 @@ Item {
         id: headerIcon
         x: UIConstants.DEFAULT_MARGIN
         anchors.verticalCenter: parent.verticalCenter
-        source: 'qrc:/resources/icon-meneamigo.png'
+        source: 'qrc:/resources/icon-chuzamigo.png'
         visible: !halfSize
     }
 
@@ -61,7 +62,7 @@ Item {
         platformStyle: LabelStyle {
             fontPixelSize: halfSize ? UIConstants.FONT_LSMALL : UIConstants.FONT_LARGE
         }
-        text: 'Meneamigo'
+        text: 'Chuzamigo'
         color: 'white'
     }
 

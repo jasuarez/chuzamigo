@@ -1,6 +1,6 @@
 TEMPLATE = app
 QT += declarative
-TARGET = "meneamigo"
+TARGET = "chuzamigo"
 DEPENDPATH += .
 INCLUDEPATH += .
 
@@ -45,8 +45,8 @@ OTHER_FILES += \
     qml/workerscript.js \
     resources/icon-view-details.png \
     resources/icon-view-comments.png \
-    resources/icon-meneamigo.png \
-    resources/meneamigo.svg \
+    resources/icon-chuzamigo.png \
+    resources/chuzamigo.svg \
     qml/constants.js
 
 RESOURCES += \
@@ -54,8 +54,8 @@ RESOURCES += \
 
 CODECFORTR = UTF-8
 TRANSLATIONS += \
-    l10n/meneamigo.ts \
-    l10n/meneamigo.es.ts
+    l10n/chuzamigo.ts \
+    l10n/chuzamigo.es.ts
 
 unix {
     #VARIABLES
@@ -80,7 +80,7 @@ unix {
     icon64.files += ../data/icon-l-$${TARGET}.png
 
     splash.path = $$DATADIR/
-    splash.files += ../data/splash-portrait-meneamigo.png
+    splash.files += ../data/splash-portrait-chuzamigo.png
 }
 
 # Rule for regenerating .qm files for translations (missing in qmake

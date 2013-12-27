@@ -1,3 +1,9 @@
+chuzamigo (0.0.1) unstable; urgency=low
+
+  * New version based on Meneamigo to access content from Chuza
+
+ -- Juan A. Suarez Romero <jasuarez@igalia.com>  Fri, 27 Dec 2013 01:50:24 +0100
+
 meneamigo (0.4.1) unstable; urgency=low
 
   * Optified package

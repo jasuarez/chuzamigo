@@ -1,5 +1,6 @@
 /**************************************************************************
- *   Meneamigo
+ *   Chuzamigo
+ *   Copyright (C) 2013 Juan A. Suarez Romero <jasuarez@igalia.com>
  *   Copyright (C) 2011 - 2012 Simon Pena <spena@igalia.com>
  *
  *   This program is free software: you can redistribute it and/or modify
@@ -46,39 +47,15 @@ Page {
     }
 
     Component.onCompleted: {
-        aboutOptions.get(0).title = qsTr('Recommend this app')
-        aboutOptions.get(1).title = qsTr('Tell us what you think')
-        aboutOptions.get(2).title = qsTr('Rate us in the Nokia Store')
-        aboutOptions.get(3).title = qsTr('Follow us on Twitter')
-        aboutOptions.get(4).title = qsTr('Check our other apps')
+        aboutOptions.get(0).title = qsTr('Tell us what you think')
     }
 
     ListModel {
         id: aboutOptions
         ListElement {
-            title: 'Recomienda esta aplicación'
-            action: 'openExternally'
-            data: 'mailto:?subject=Download%20Meneamigo&body=Available%20at%20http://store.ovi.com/content/200577'
-        }
-        ListElement {
             title: 'Cuéntanos tu opinión'
             action: 'openExternally'
-            data: 'mailto:spena@igalia.com?subject=Meneamigo'
-        }
-        ListElement {
-            title: 'Valóranos en la Nokia Store'
-            action: 'openStore'
-            data: 'http://store.ovi.com/content/200577'
-        }
-        ListElement {
-            title: 'Síguenos en Twitter'
-            action: 'openExternally'
-            data: 'https://twitter.com/#!/spenap'
-        }
-        ListElement {
-            title: 'Otras de nuestras aplicaciones'
-            action: 'openStore'
-            data: 'http://store.ovi.com/publisher/Simon%20Pena/'
+            data: 'mailto:jasuarez@igalia.com?subject=Chuzamigo'
         }
     }
 
@@ -101,12 +78,12 @@ Page {
             Image {
                 id: aboutImage
                 anchors.horizontalCenter: parent.horizontalCenter
-                source: 'qrc:/resources/icon-about-meneamigo.png'
+                source: 'qrc:/resources/icon-about-chuzamigo.png'
             }
 
             Label {
                 id: aboutVersion
-                text: 'Meneamigo 0.4.1'
+                text: 'Chuzamigo 0.0.1'
                 width: parent.width
                 horizontalAlignment: Text.AlignHCenter
                 platformStyle: LabelStyle {
@@ -189,7 +166,7 @@ Page {
 
             Label {
                 id: aboutCopyright
-                text: 'Copyright © 2011 - 2012 Simon Pena'
+                text: 'Copyright © 2013 Juan A. Suarez Romero\nCopyright © 2011 - 2012 Simon Pena'
                 width: parent.width
                 horizontalAlignment: Text.AlignHCenter
                 platformStyle: LabelStyle {
@@ -201,7 +178,7 @@ Page {
 
             Label {
                 id: aboutDisclaimer
-                text: qsTr('This application uses <a href="http://meneame.net/">Meneame</a> ' +
+                text: qsTr('This application uses <a href="http://chuza.gl/">Chuza</a> ' +
                            'but it is not affiliated nor certified by them.')
                 width: parent.width
                 horizontalAlignment: Text.AlignJustify

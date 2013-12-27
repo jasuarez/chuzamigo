@@ -1,42 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="en_GB">
+<TS version="2.0" language="es_ES">
 <context>
     <name>AboutView</name>
     <message>
         <location filename="../qml/AboutView.qml" line="48"/>
         <source>Recommend this app</source>
-        <translation>Recommend this app</translation>
+        <translation>Recomienda esta aplicación</translation>
     </message>
     <message>
         <location filename="../qml/AboutView.qml" line="49"/>
         <source>Tell us what you think</source>
-        <translation>Tell us what you think</translation>
+        <translation>Cuéntanos tu opinión</translation>
     </message>
     <message>
         <location filename="../qml/AboutView.qml" line="50"/>
         <source>Rate us in the Nokia Store</source>
-        <translation>Rate us in the Nokia Store</translation>
+        <translation>Valóranos en la Nokia Store</translation>
     </message>
     <message>
         <location filename="../qml/AboutView.qml" line="51"/>
         <source>Follow us on Twitter</source>
-        <translation>Follow us on Twitter</translation>
+        <translation>Síguenos en Twitter</translation>
     </message>
     <message>
         <location filename="../qml/AboutView.qml" line="52"/>
         <source>Check our other apps</source>
-        <translation>Check our other apps</translation>
+        <translation>Otras de nuestras aplicaciones</translation>
     </message>
     <message>
         <location filename="../qml/AboutView.qml" line="203"/>
-        <source>This application uses &lt;a href=&quot;http://meneame.net/&quot;&gt;Meneame&lt;/a&gt; but it is not affiliated nor certified by them.</source>
-        <translation>This application uses &lt;a href=&quot;http://meneame.net/&quot;&gt;Meneame&lt;/a&gt; but it is not affiliated nor certified by them.</translation>
+        <source>This application uses &lt;a href=&quot;http://chuza.gl/&quot;&gt;Chuza&lt;/a&gt; but it is not affiliated nor certified by them.</source>
+        <translation>Esta aplicación usa &lt;a href=&quot;http://chuza.gl/&quot;&gt;Chuza&lt;/a&gt; pero no está afiliado ni certificado por ellos.</translation>
     </message>
     <message>
         <location filename="../qml/AboutView.qml" line="217"/>
         <source>Licence</source>
-        <translation></translation>
+        <translation>Licencia</translation>
     </message>
 </context>
 <context>
@@ -44,7 +44,7 @@
     <message>
         <location filename="../qml/CommentsDelegate.qml" line="76"/>
         <source>#%1 | karma: %2 | By %3</source>
-        <translation>#%1 | karma: %2 | By %3</translation>
+        <translation>#%1 | karma: %2 | Por %3</translation>
     </message>
 </context>
 <context>
@@ -52,36 +52,36 @@
     <message>
         <location filename="../qml/CommentsView.qml" line="32"/>
         <source>Open original news</source>
-        <translation>Open original news</translation>
+        <translation>Ver noticia original</translation>
     </message>
     <message>
         <location filename="../qml/CommentsView.qml" line="37"/>
         <source>Jump to beginning</source>
-        <translation>Jump to beginning</translation>
+        <translation>Saltar al principio</translation>
     </message>
     <message>
         <location filename="../qml/CommentsView.qml" line="42"/>
         <source>Jump to end</source>
-        <translation>Jump to end</translation>
+        <translation>Saltar al final</translation>
     </message>
     <message>
         <location filename="../qml/CommentsView.qml" line="172"/>
         <source>karma: %1 | By %2</source>
-        <translation>karma: %1 | By %2</translation>
+        <translation>karma: %1 | Por %2</translation>
     </message>
     <message numerus="yes">
         <location filename="../qml/CommentsView.qml" line="244"/>
         <location filename="../qml/CommentsView.qml" line="245"/>
         <source>%Ln comment(s)</source>
         <translation>
-            <numerusform>%Ln comment</numerusform>
-            <numerusform>%Ln comments</numerusform>
+            <numerusform>%Ln comentario</numerusform>
+            <numerusform>%Ln comentarios</numerusform>
         </translation>
     </message>
     <message>
         <location filename="../qml/CommentsView.qml" line="311"/>
         <source>No comments found</source>
-        <translation>No comments found</translation>
+        <translation>No hay comentarios</translation>
     </message>
 </context>
 <context>
@@ -89,37 +89,37 @@
     <message>
         <location filename="../qml/MainView.qml" line="40"/>
         <source>Frontpage</source>
-        <translation>Frontpage</translation>
+        <translation>Portada</translation>
     </message>
     <message>
         <location filename="../qml/MainView.qml" line="41"/>
         <source>Pending</source>
-        <translation>Pending</translation>
+        <translation>Pendientes</translation>
     </message>
     <message>
         <location filename="../qml/MainView.qml" line="95"/>
         <source>Open original news</source>
-        <translation>Open original news</translation>
+        <translation>Ver noticia original</translation>
     </message>
     <message>
         <location filename="../qml/MainView.qml" line="106"/>
         <source>About</source>
-        <translation>About</translation>
+        <translation>Acerca de</translation>
     </message>
     <message>
         <location filename="../qml/MainView.qml" line="140"/>
         <source>Category</source>
-        <translation>Category</translation>
+        <translation>Categoría</translation>
     </message>
     <message>
         <location filename="../qml/MainView.qml" line="258"/>
-        <source>Error while accessing Meneame</source>
-        <translation>Error while accessing Meneame</translation>
+        <source>Error while accessing Chuza</source>
+        <translation>Error al acceder a Chuza</translation>
     </message>
     <message>
         <location filename="../qml/MainView.qml" line="262"/>
         <source>Try again</source>
-        <translation>Try again</translation>
+        <translation>Volver a intentar</translation>
     </message>
 </context>
 <context>
@@ -127,52 +127,52 @@
     <message>
         <location filename="../qml/NewsDelegate.qml" line="97"/>
         <source>shakes</source>
-        <translation>shakes</translation>
+        <translation>votadas</translation>
     </message>
     <message>
         <location filename="../qml/NewsDelegate.qml" line="124"/>
         <source>cool</source>
-        <translation>cool</translation>
+        <translation>chachi</translation>
     </message>
     <message>
         <location filename="../qml/NewsDelegate.qml" line="126"/>
         <source>vote</source>
-        <translation>vote</translation>
+        <translation>vota</translation>
     </message>
     <message>
         <location filename="../qml/NewsDelegate.qml" line="130"/>
         <source>error</source>
-        <translation>error</translation>
+        <translation></translation>
     </message>
     <message numerus="yes">
         <location filename="../qml/NewsDelegate.qml" line="199"/>
         <source>%Ln comment(s)</source>
         <translation>
-            <numerusform>%Ln comment</numerusform>
-            <numerusform>%Ln comments</numerusform>
+            <numerusform>%Ln comentario</numerusform>
+            <numerusform>%Ln comentarios</numerusform>
         </translation>
     </message>
     <message>
         <source>By %1</source>
-        <translation type="obsolete">By %1</translation>
+        <translation type="obsolete">Por %1</translation>
     </message>
 </context>
 <context>
     <name>RefreshHeader</name>
     <message>
         <location filename="../qml/RefreshHeader.qml" line="89"/>
-        <source>Updating</source>
-        <translation>Updating</translation>
+        <source>Tap to update</source>
+        <translation>Pulsa para actualizar</translation>
     </message>
     <message>
         <location filename="../qml/RefreshHeader.qml" line="89"/>
-        <source>Tap to update</source>
-        <translation>Tap to update</translation>
+        <source>Updating</source>
+        <translation>Actualizando</translation>
     </message>
     <message>
         <location filename="../qml/RefreshHeader.qml" line="99"/>
         <source>Last update: </source>
-        <translation>Last update: </translation>
+        <translation>Última actualización: </translation>
     </message>
 </context>
 </TS>

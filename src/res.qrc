@@ -13,15 +13,15 @@
         <file>qml/RefreshHeader.qml</file>
         <file>qml/MNM.js</file>
         <file>qml/workerscript.js</file>
-        <file>resources/icon-meneamigo.png</file>
+        <file>resources/icon-chuzamigo.png</file>
         <file>resources/icon-view-comments.png</file>
         <file>resources/icon-view-details.png</file>
         <file>resources/icon-refresh.png</file>
-        <file>l10n/meneamigo.es.qm</file>
-        <file>l10n/meneamigo.qm</file>
+        <file>l10n/chuzamigo.es.qm</file>
+        <file>l10n/chuzamigo.qm</file>
         <file>qml/constants.js</file>
         <file>resources/round-corners-shadow.png</file>
-        <file>resources/icon-about-meneamigo.png</file>
+        <file>resources/icon-about-chuzamigo.png</file>
     </qresource>
     <qresource prefix="/img/smileys">
         <file alias="angry.gif">resources/smileys/angry.gif</file>

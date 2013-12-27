@@ -1,5 +1,6 @@
 /**************************************************************************
- *   Meneamigo
+ *   Chuzamigo 
+ *   Copyright (C) 2013 Juan A. Suarez Romero <jasuarez@igalia.com>
  *   Copyright (C) 2011 - 2012 Simon Pena <spena@igalia.com>
  *
  *   This program is free software: you can redistribute it and/or modify
@@ -23,17 +24,17 @@ XmlListModel {
 
     namespaceDeclarations: 'declare namespace dc = "http://purl.org/dc/elements/1.1/";' +
                            'declare namespace wfw = "http://wellformedweb.org/CommentAPI/";' +
-                           'declare namespace meneame = "http://meneame.net/faq-es.php";'
+                           'declare namespace chuza = "http://chuza.gl/faq-es.php";'
     source: ''
     query: '/rss/channel/item'
 
-    XmlRole { name: 'mnm_comment_id'; query: 'meneame:comment_id/string()' }
-    XmlRole { name: 'mnm_link_id'; query: 'meneame:link_id/string()' }
-    XmlRole { name: 'mnm_order'; query: 'meneame:order/number()' }
-    XmlRole { name: 'mnm_user'; query: 'meneame:user/string()' }
-    XmlRole { name: 'mnm_votes'; query: 'meneame:votes/number()' }
-    XmlRole { name: 'mnm_karma'; query: 'meneame:karma/number()' }
-    XmlRole { name: 'mnm_url'; query: 'meneame:url/string()' }
+    XmlRole { name: 'mnm_comment_id'; query: 'chuza:comment_id/string()' }
+    XmlRole { name: 'mnm_link_id'; query: 'chuza:link_id/string()' }
+    XmlRole { name: 'mnm_order'; query: 'chuza:order/number()' }
+    XmlRole { name: 'mnm_user'; query: 'chuza:user/string()' }
+    XmlRole { name: 'mnm_votes'; query: 'chuza:votes/number()' }
+    XmlRole { name: 'mnm_karma'; query: 'chuza:karma/number()' }
+    XmlRole { name: 'mnm_url'; query: 'chuza:url/string()' }
     XmlRole { name: 'title'; query: 'title/string()' }
     XmlRole { name: 'link'; query: 'link/string()' }
     XmlRole { name: 'pubDate'; query: 'pubDate/string()'; isKey: true }

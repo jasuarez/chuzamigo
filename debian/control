@@ -1,33 +1,32 @@
-Source: meneamigo
+Source: chuzamigo
 Section: user/Other
 Priority: extra
-Maintainer: Simon Pena <spena@igalia.com>
+Maintainer: Juan A. Suarez Romero <jasuarez@igalia.com>
 Build-Depends: debhelper (>= 7), applauncherd-dev,
  maemo-meegotouch-interfaces-dev, libmdatauri-dev
 Standards-Version: 3.8.4
 XB-Maemo-Flags: visible
-XB-Homepage: http://projects.developer.nokia.com/meneamigo
-XB-Bugtracker: http://projects.developer.nokia.com/meneamigo/query
+XB-Homepage: https://gitorious.org/spena-playground/chuzamigo
 
-Package: meneamigo
+Package: chuzamigo
 Architecture: any
 Depends: qt-components, ${shlibs:Depends}, ${misc:Depends}
-Description: Meneamigo is a Meneame client for MeeGo
- Meneame is a Spanish-speaking web site for news promotion. Its
+Description: Chuzamigo is a Chuza client for MeeGo
+ Chuza is a Galician/Portuguese web site for news promotion. Its
  users can send news, vote them and coment on them.
  .
- Meneamigo allows you accessing Meneame content, showing you
+ Chuzamigo allows you accessing Chuza content, showing you
  the list of news in a way optimized for your device screen -both
  published and pending news-, displaying their comments, and
  making it easy to share them using the system accounts.
-XB-Maemo-Display-Name: Meneamigo: a Meneame client for MeeGo
-XB-Maemo-Display-Name-es_ES: Meneamigo: un cliente de Meneame para MeeGo
-XB-Description-es_ES: Meneamigo es un cliente de Meneame para MeeGo
- Meneame es un sitio web de habla hispana para la promocion de noticias.
+XB-Maemo-Display-Name: Chuzamigo: a Chuza client for MeeGo
+XB-Maemo-Display-Name-es_ES: Chuzaamigo: un cliente de Chuza para MeeGo
+XB-Description-es_ES: Chuzamigo es un cliente de Chuza para MeeGo
+ Chuza es un sitio web de habla gallego y portugues para la promocion de noticias.
  Sus usuarios pueden enviar noticias, votarlas, y publicar comentarios sobre
  ellas.
  .
- Meneamigo te facilita el acceso al contenido de Meneame, presentandote
+ Chuzamigo te facilita el acceso al contenido de Chuza, presentandote
  la lista de noticias de un modo optimizado para tu dispositivo -publicadas
  y pendientes-, permitiendote ver tambien los comentarios realizados en
  cada una y facilitando compartir las noticias con las cuentas del sistema.

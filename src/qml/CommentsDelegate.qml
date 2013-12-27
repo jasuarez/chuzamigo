@@ -1,5 +1,6 @@
 /**************************************************************************
- *   Meneamigo
+ *   Chuzamigo
+ *   Copyright (C) 2013 Juan A. Suarez Romero <jasuarez@igalia.com>
  *   Copyright (C) 2011 - 2012 Simon Pena <spena@igalia.com>
  *
  *   This program is free software: you can redistribute it and/or modify
@@ -100,7 +101,7 @@ Item {
                         var commentNumber = parseInt(link.substr(1), 10)
                         // Make sure the internal link is to another comment
                         if (commentNumber) {
-                            // Meneame comments start from #1 (since #0 is the entry itself)
+                            // Chuza comments start from #1 (since #0 is the entry itself)
                             var referredComment = commentNumber - 1
                             commentsList.positionViewAtIndex(referredComment, ListView.Beginning)
                         }
