@@ -55,6 +55,15 @@ function cleanUpComments(text) {
     return text.replace(/&#187;&nbsp;autor.*/g, '').replace(/http:\/\/mnmstatic.net\/img\/smileys\//g, '\/img\/smileys\/')
 }
 
+function cleanUpNews(text) {
+    var start = text.indexOf('<p>')
+    var end = text.indexOf('</p>')
+    if (start == -1 || end == -1) {
+        return text;
+    }
+    return text.substr(start + 3, end - start - 3)
+}
+
 function startsWith(text, str) {
     return (text.match('^' + str) == str)
 }

@@ -53,7 +53,7 @@ Page {
         ToolIcon {
             iconId: 'toolbar-share'
             onClicked: {
-                controller.share(currentEntry.title, currentEntry.mnm_url, currentEntry.description)
+                controller.share(currentEntry.title, currentEntry.mnm_url, MNM.cleanUpNews(currentEntry.description))
             }
         }
         ToolIcon {
@@ -172,7 +172,7 @@ Page {
                     font.family: UIConstants.FONT_FAMILY
                     width: parent.width
                     wrapMode: Text.WordWrap
-                    text: currentEntry.description
+                    text: MNM.cleanUpNews(currentEntry.description)
                 }
 
                 Item {
