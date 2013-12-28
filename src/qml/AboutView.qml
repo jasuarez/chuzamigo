@@ -190,6 +190,19 @@ Page {
                 onLinkActivated: Qt.openUrlExternally(link)
             }
 
+            Label {
+                id: aboutFork
+                text: qsTr('Chuzamigo is a fork of <b>Meneamigo</b>, by Simon Pena.')
+                width: parent.width
+                horizontalAlignment: Text.AlignJustify
+                platformStyle: LabelStyle {
+                    fontPixelSize: UIConstants.FONT_LSMALL
+                    fontFamily: UIConstants.FONT_FAMILY_LIGHT
+                }
+                color: UIConstants.COLOR_FOREGROUND
+                onLinkActivated: Qt.openUrlExternally(link)
+            }
+
             Button {
                 anchors.horizontalCenter: parent.horizontalCenter
                 text: qsTr('Licence')

@@ -34,6 +34,11 @@
         <translation>Esta aplicación usa &lt;a href=&quot;http://chuza.gl/&quot;&gt;Chuza&lt;/a&gt; pero no está afiliado ni certificado por ellos.</translation>
     </message>
     <message>
+        <location filename="../qml/AboutView.qml" line="213"/>
+        <source>Chuzamigo is a fork of &lt;b&gt;Meneamigo&lt;/b&gt;, by Simon Pena.</source>
+        <translation>Chuzamigo es un fork de &lt;b&gt;Meneamigo&lt;/b&gt;, de Simon Pena.</translation>
+    </message>
+    <message>
         <location filename="../qml/AboutView.qml" line="217"/>
         <source>Licence</source>
         <translation>Licencia</translation>

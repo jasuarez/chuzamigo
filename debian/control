@@ -19,6 +19,8 @@ Description: Chuzamigo is a Chuza client for MeeGo
  the list of news in a way optimized for your device screen -both
  published and pending news-, displaying their comments, and
  making it easy to share them using the system accounts.
+ .
+ Chuzamigo is a fork of Meneamigo, by Simon Pena.
 XB-Maemo-Display-Name: Chuzamigo: a Chuza client for MeeGo
 XB-Maemo-Display-Name-es_ES: Chuzamigo: un cliente de Chuza para MeeGo
 XB-Description-es_ES: Chuzamigo es un cliente de Chuza para MeeGo
@@ -30,6 +32,8 @@ XB-Description-es_ES: Chuzamigo es un cliente de Chuza para MeeGo
  la lista de noticias de un modo optimizado para tu dispositivo -publicadas
  y pendientes-, permitiendote ver tambien los comentarios realizados en
  cada una y facilitando compartir las noticias con las cuentas del sistema.
+ .
+ Chuzamigo es un fork de Meneamigo, de Simon Pena.
 XB-Maemo-Icon-26:
  iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAKL2lDQ1BJQ0Mg
  cHJvZmlsZQAASMedlndUVNcWh8+9d3qhzTACUobeu8AA0nuTXkVhmBlgKAMO
